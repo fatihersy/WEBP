@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"]</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
+	<script src="https://kit.fontawesome.com/d4b0984dff.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+	<script src="~/customJs/layout.js"></script>
+</head>
+<body>
+		@{/*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">*/}
+	<div class="nav-frame">
+		<div class="nav-div">
+			<div class="nav-item-list padding-left">
+				<div class="nav-item padding-left">
+					<a class="nav-item-link" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+				</div>
+
+				<div class="nav-item padding-left">
+					<a class="nav-item-link" asp-area="" asp-controller="Oyun" asp-action="Oyun">Oyun</a>
+				</div>
+
+				<div class="nav-item padding-left">
+					<a class="nav-item-link" asp-area="" asp-controller="Muzik" asp-action="Muzik">Müzik</a>
+				</div>
+
+				<div class="nav-item padding-left">
+					<a class="nav-item-link" asp-area="" asp-controller="Film" asp-action="Film">Film</a>
+				</div>
+			</div>
+		</div>
+		<div class="nav-div justify-content-end">
+			<div class="nav-item-list padding-right">
+				<div class="nav-item padding-right">
+					<a class="nav-item-link" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<div class="container-frame">
+			<div class="container-div">
+				<div id="sidepanel">
+					<div id="sidepanel-toggle-item" title="Collapse the Sidebar">
+						<i id="toggle-sidepanel-width" class="fas fa-compress-alt" onclick="toggleSidepanelWidth()"></i>
+					</div>
+
+					<div class="sidepanel-item">
+						<i id="sidepanel-item-icon" class="fas fa-angry"></i>
+						<div class="sidepanel-item-text">Fatih Ersoy</div>
+					</div>
+					
+
+				</div>
+				<div id="content">
+					@RenderBody()
+				</div>
+			</div>
+		</div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WEBP.BLL\WEBP.BLL.csproj" />
+    <ProjectReference Include="..\WEBP.Core\WEBP.Core.csproj" />
+    <ProjectReference Include="..\WEBP.DAL\WEBP.DAL.csproj" />
+    <ProjectReference Include="..\WEBP.Entities\WEBP.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

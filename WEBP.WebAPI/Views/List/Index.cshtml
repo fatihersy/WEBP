@@ -1,0 +1,25 @@
+﻿@model WEBP.WebAPI.Models.ListViewModel
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Merhaba</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Title</th>
+				<th scope="col">Content</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var blog in Model.blogs)
+			{
+				<tr>
+					<th scope="row"> @blog.title </th>
+					<td>@blog.content</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

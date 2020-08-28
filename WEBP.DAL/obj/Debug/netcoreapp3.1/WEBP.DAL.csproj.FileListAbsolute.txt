@@ -1,0 +1,14 @@
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\bin\Debug\netcoreapp3.1\WEBP.DAL.deps.json
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\bin\Debug\netcoreapp3.1\WEBP.DAL.dll
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\bin\Debug\netcoreapp3.1\WEBP.DAL.pdb
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\bin\Debug\netcoreapp3.1\WEBP.Core.dll
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\bin\Debug\netcoreapp3.1\WEBP.Entities.dll
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\bin\Debug\netcoreapp3.1\WEBP.Core.pdb
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\bin\Debug\netcoreapp3.1\WEBP.Entities.pdb
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\obj\Debug\netcoreapp3.1\WEBP.DAL.csprojAssemblyReference.cache
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\obj\Debug\netcoreapp3.1\WEBP.DAL.AssemblyInfoInputs.cache
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\obj\Debug\netcoreapp3.1\WEBP.DAL.AssemblyInfo.cs
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\obj\Debug\netcoreapp3.1\WEBP.DAL.csproj.CoreCompileInputs.cache
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\obj\Debug\netcoreapp3.1\WEBP.DAL.csproj.CopyComplete
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\obj\Debug\netcoreapp3.1\WEBP.DAL.dll
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.DAL\obj\Debug\netcoreapp3.1\WEBP.DAL.pdb

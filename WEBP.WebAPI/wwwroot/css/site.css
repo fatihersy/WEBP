@@ -1,0 +1,94 @@
+﻿* {
+    font-family: 'Lobster Two', cursive;
+}
+body {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+.padding-left {
+    padding-left: 1vw;
+}
+.padding-right {
+    padding-right: 1vw;
+}
+
+.nav-frame {
+    height:50px;
+    display:flex;
+}
+.nav-div {
+    width: 50%;
+    display: inherit;
+}
+.nav-item-list {
+    display:inherit;
+}
+.nav-item 
+{
+    line-height: 50px;
+}
+.nav-item-link {
+    padding: 5px 10px 5px 10px;
+    color: white;
+    font-size: larger;
+    border-radius: 5px 5px 5px 5px;
+}
+.nav-item-link:hover 
+{
+    background-color: white;
+    color: black;
+    text-decoration:none;
+}
+
+.container-frame {
+    height:100%;
+    width:100%;
+}
+.container-div {
+    display:flex;
+    width:inherit;
+}
+#content {
+    background-color: #f7f7f7;
+    height: 100vh;
+    width: calc(100% - 250px);
+    border-radius: 0px 5px 0px 0px;
+    box-shadow: inset 130px 0px 120px -100px rgba(0,0,0,0.05);
+}
+#sidepanel {
+    display:block;
+    font-size:larger;
+    padding:1vh;
+    width: 250px;
+    height: inherit;
+    border-radius: 5px 0px 0px 0px;
+    background-color: #f7f7f7;
+}
+#sidepanel-toggle-item {
+    display:flex;
+    padding:2vh;
+    align-items: center;
+    justify-content: flex-start;
+}
+#toggle-sidepanel-width 
+{
+    cursor:pointer;
+}
+.sidepanel-item 
+{
+    padding: 2vh 0vh 0vh 2vh;
+    display: flex;
+}
+#sidepanel-item-icon 
+{
+    line-height:inherit;
+}
+.sidepanel-item-text 
+{
+
+}
+
+/*
+    #bdc3c7
+*/
