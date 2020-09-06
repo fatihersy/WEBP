@@ -1,35 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WEBP.BLL.Concrete;
-using WEBP.DAL.Interfaces.EntityFramework;
-using WEBP.Entities;
+using WEBP.DAL.Interfaces;
 using WEBP.WebAPI.Models;
 
 namespace WEBP.WebAPI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly BlogsManager _blogsManager;
-
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, IBlogsDal blogsDal)
+        private readonly BlogManager     _blogManager;
+        private readonly CategoryManager _categoryManager;
+        private readonly AuthorManager   _authorManager;
+
+
+        public HomeController(ILogger<HomeController> logger, IBlogDal blogsDal, ICategoryDal categoryDal, IAuthorDal authorDal)
         {
             _logger = logger;
-            _blogsManager = new BlogsManager(blogsDal);
+            _blogManager = new BlogManager(blogsDal);
+            _categoryManager = new CategoryManager(categoryDal);
+            _authorManager = new AuthorManager(authorDal);
         }
 
         public IActionResult Index()
         {
             return View(new ListViewModel 
             {
-                blogs = _blogsManager.GetAll()
+                blogs = _blogManager.GetAll(),
+                categories = _categoryManager.GetAll(),
+                authors = _authorManager.GetAll()
             });
         }
 

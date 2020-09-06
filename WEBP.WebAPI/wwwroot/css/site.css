@@ -1,94 +1,189 @@
-﻿* {
-    font-family: 'Lobster Two', cursive;
-}
-body {
-    background-color: black;
-    height: 100%;
-    width: 100%;
-}
-.padding-left {
-    padding-left: 1vw;
-}
-.padding-right {
-    padding-right: 1vw;
+﻿:root {
+    --black: #1e1e1e;
+    --white: #f4f4f4;
+
+    
+    --body-bg-color: var(--white);
+
+    --nav-text-color: var(--white);
+    --nav-text-hover-color-: var(--nav-bg-color);
+    --nav-text-bg-color: var(--nav-text-color);
+    --nav-height-px: 40px;
+    --nav-text-color: var(--white);
+    --nav-bg-color: var(--black);
+
+    --sidepanel-bg-color: var(--white);
+    --sidebar-width: 50px;
+
+    --font-navbar: 'Lobster Two', cursive;
+    --font-container: 'Merriweather', serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--body-bg-color);
+}
+.right {
+    position:fixed;
+    right:1vw;
+}
+.tooltip {
+  font-family: var(--font-container);
+}
+
+
+/* NAVBAR */
+
 .nav-frame {
-    height:50px;
-    display:flex;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height-px);
+    font-family: var(--font-navbar);
+    background-color: var(--nav-bg-color);
+    position: fixed;
 }
 .nav-div {
-    width: 50%;
-    display: inherit;
+    justify-content:center;
 }
 .nav-item-list {
-    display:inherit;
+    display:flex;
+    justify-content:center;
 }
 .nav-item 
 {
-    line-height: 50px;
+    line-height: var(--nav-height-px);
 }
 .nav-item-link {
     padding: 5px 10px 5px 10px;
-    color: white;
-    font-size: larger;
+    color: var(--nav-text-color);
+    font-size: medium;
     border-radius: 5px 5px 5px 5px;
 }
 .nav-item-link:hover 
 {
-    background-color: white;
-    color: black;
+    background-color: var(--nav-text-bg-color);
+    color: var(--nav-text-hover-color);
     text-decoration:none;
 }
 
-.container-frame {
-    height:100%;
-    width:100%;
-}
-.container-div {
-    display:flex;
-    width:inherit;
-}
-#content {
-    background-color: #f7f7f7;
-    height: 100vh;
-    width: calc(100% - 250px);
-    border-radius: 0px 5px 0px 0px;
-    box-shadow: inset 130px 0px 120px -100px rgba(0,0,0,0.05);
-}
+/* NAVBAR */
+
+
+/* SIDEPANEL */
+
 #sidepanel {
-    display:block;
-    font-size:larger;
-    padding:1vh;
-    width: 250px;
-    height: inherit;
-    border-radius: 5px 0px 0px 0px;
-    background-color: #f7f7f7;
-}
-#sidepanel-toggle-item {
-    display:flex;
-    padding:2vh;
+    left: 0;
+    top: var( --nav-height-px );
+    height: calc( 100% - var(--nav-height-px) );
+    width: var(--sidebar-width);
+    display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    position: fixed;
 }
-#toggle-sidepanel-width 
-{
-    cursor:pointer;
+    #sidepanel * {
+        align-items: center;
+        justify-content: center;
+    }
+.sidepanel-item-div {
+    height: 99%;
 }
 .sidepanel-item 
 {
-    padding: 2vh 0vh 0vh 2vh;
+    height: 40px;
+    width: 40px;
     display: flex;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: 0.2s linear;
 }
+    .sidepanel-item:hover {
+        background-color: var(--black);
+        color: var(--white);
+        border-radius: 5px;
+    }
+
 #sidepanel-item-icon 
 {
-    line-height:inherit;
+
 }
 .sidepanel-item-text 
 {
-
+    margin-left: 5px;
 }
 
+/* SIDEPANEL */
+
+
+/* CONTAINER */
+
+.container 
+{
+    max-width:   calc( 97vw - var( --sidebar-width ) );
+    margin-top:  var( --nav-height-px );
+    margin-left: var( --sidebar-width );
+    font-family: var(--font-container);
+    padding:     5px;
+    min-height:  calc( 100vh - var(--nav-height-px ));
+    display:     flex;
+}
+#content-div {
+    height: inherit;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    display: inline-block;
+    box-shadow: inset 130px 0px 120px -100px rgba(0,0,0,0.05);
+}
+
+/* CONTAINER */
+
+
+/* POST  */
+
+.post 
+{
+    width: auto;
+    height: auto;
+    margin-bottom: 5px;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    background-image: url("../Resources/b.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* POST */
+
+@media only screen and (max-width: 600px) 
+{
+    .nav-item-list {
+        justify-content: left;
+    }
+
+    .post{
+        width: 100%;
+        display:block;
+        font-size:small;
+        padding: 0px;
+        right: 0;
+        word-wrap: break-word;
+    }
+    #content-div {
+        max-width: 100vh;
+    }
+
+    .container {
+        padding: 5px 0px;
+    }
+}
+
+
 /*
-    #bdc3c7
+    font-family: 'Merriweather', serif;
 */

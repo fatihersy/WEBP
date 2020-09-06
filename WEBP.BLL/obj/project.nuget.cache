@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WWntZ87WIS3neuD9Vg0WsY4ScBYdx+hoQhk0YmuO1K0nrh+fEVQP88etFMB6v8NvXejsjF12Hl2gmRGBfBVILg==",
+  "dgSpecHash": "hiHL0aqWkUeCt4PauczZzySpMAhy363yfYwXUx1yAqz52eKMAEnSqB16gkQCx6H0bWWbzRktbdzvN/D3uhA8yQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj",
+  "projectFilePath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\supre\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\supre\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

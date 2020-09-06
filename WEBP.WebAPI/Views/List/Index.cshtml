@@ -1,10 +1,9 @@
 ﻿@model WEBP.WebAPI.Models.ListViewModel
 @{
-	ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "List Page";
 }
 
 <div class="text-center">
-	<h1 class="display-4">Merhaba</h1>
 	<table class="table">
 		<thead>
 			<tr>
@@ -16,7 +15,7 @@
 			@foreach (var blog in Model.blogs)
 			{
 				<tr>
-					<th scope="row"> @blog.title </th>
+					<td>@blog.title</td>
 					<td>@blog.content</td>
 				</tr>
 			}

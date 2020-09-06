@@ -947,11 +947,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.WebAPI\\WEBP.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.WebAPI\\WEBP.WebAPI.csproj",
       "projectName": "WEBP.WebAPI",
-      "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.WebAPI\\WEBP.WebAPI.csproj",
+      "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.WebAPI\\WEBP.WebAPI.csproj",
       "packagesPath": "C:\\Users\\supre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\supre\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -967,17 +967,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj": {
-              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj"
+            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj": {
+              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj"
             },
-            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
-              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj"
+            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
+              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj"
             },
-            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj": {
-              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj"
+            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj": {
+              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj"
             },
-            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {
-              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj"
+            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {
+              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj"
             }
           }
         }

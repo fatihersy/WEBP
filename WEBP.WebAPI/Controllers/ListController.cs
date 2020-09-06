@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using WEBP.BLL.Concrete;
-using WEBP.DAL.Interfaces.EntityFramework;
+using WEBP.DAL.Interfaces;
 using WEBP.WebAPI.Models;
 
 namespace WEBP.WebAPI.Controllers
 {
     public class ListController : Controller
     {
-        private readonly BlogsManager _blogsManager;
+        private readonly BlogManager _blogsManager;
 
-        public ListController(IBlogsDal blogsDal)
+        public ListController(IBlogDal blogsDal)
         {
-            _blogsManager = new BlogsManager(blogsDal);
+            _blogsManager = new BlogManager(blogsDal);
         }
 
         public IActionResult Index()

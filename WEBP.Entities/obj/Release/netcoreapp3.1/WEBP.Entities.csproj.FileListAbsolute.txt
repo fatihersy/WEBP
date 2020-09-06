@@ -1,0 +1,12 @@
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\bin\Release\netcoreapp3.1\WEBP.Entities.deps.json
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\bin\Release\netcoreapp3.1\WEBP.Entities.dll
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\bin\Release\netcoreapp3.1\WEBP.Entities.pdb
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\bin\Release\netcoreapp3.1\WEBP.Core.dll
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\bin\Release\netcoreapp3.1\WEBP.Core.pdb
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\obj\Release\netcoreapp3.1\WEBP.Entities.csprojAssemblyReference.cache
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\obj\Release\netcoreapp3.1\WEBP.Entities.AssemblyInfoInputs.cache
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\obj\Release\netcoreapp3.1\WEBP.Entities.AssemblyInfo.cs
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\obj\Release\netcoreapp3.1\WEBP.Entities.csproj.CoreCompileInputs.cache
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\obj\Release\netcoreapp3.1\WEBP.Entities.csproj.CopyComplete
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\obj\Release\netcoreapp3.1\WEBP.Entities.dll
+C:\Users\supre\Source\Repos\fatihersy\WEBP\WEBP.Entities\obj\Release\netcoreapp3.1\WEBP.Entities.pdb

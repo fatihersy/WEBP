@@ -1,17 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WEBP.BLL.Abstract;
 using WEBP.BLL.Concrete;
 using WEBP.DAL.Concrete.EntityFramework;
-using WEBP.DAL.Interfaces.EntityFramework;
+using WEBP.DAL.Interfaces;
 
 namespace WEBP.WebAPI
 {
@@ -28,9 +23,16 @@ namespace WEBP.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddScoped<IBlogsDal, EfBlogsDal>();
-            services.AddScoped<IBlogsDal, EfBlogsDal>();
-            services.AddScoped<IBlogsService, BlogsManager>();
+            services.AddScoped<IBlogDal, EfBlogDal>();
+            services.AddScoped<ITagService, TagManager>();
+            services.AddScoped<ITagDal, EfTagDal>();
+            services.AddScoped<IAuthorService, AuthorManager>();
+            services.AddScoped<IAuthorDal, EfAuthorDal>();
+            services.AddScoped<IAuthorService, AuthorManager>();
+            services.AddScoped<IBlogtagDal, EfBlogtagDal>();
+            services.AddScoped<IBlogtagService, BlogtagManager>();
+            services.AddScoped<ICategoryDal, EfCategoryDal>();
+            services.AddScoped<ICategoryService, CategoryManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
