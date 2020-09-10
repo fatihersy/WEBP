@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WEBP.Entities;
+﻿using System.Collections.Generic;
+using WEBP.Entities.Database;
 
 namespace WEBP.BLL.Abstract
 {

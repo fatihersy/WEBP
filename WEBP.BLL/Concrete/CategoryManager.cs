@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using WEBP.BLL.Abstract;
 using WEBP.DAL.Interfaces;
-using WEBP.Entities;
+using WEBP.Entities.UI;
+using WEBP.Entities.Database;
 
 namespace WEBP.BLL.Concrete
 {
@@ -28,9 +27,23 @@ namespace WEBP.BLL.Concrete
             );
         }
 
-        public List<Category> GetAll()
+        public List<UiCategory> GetAll()
         {
-            return _categoryDal.GetList();
+            List<Category> categorys = _categoryDal.GetList();
+            List<UiCategory> uiCategorys = new List<UiCategory>();
+
+            foreach (var item in categorys)
+            {
+                UiCategory uiCategory = new UiCategory
+                {
+                    name = item.name,
+                    postcolor = item.postcolor
+                };
+
+                uiCategorys.Add(uiCategory);
+            }
+
+            return uiCategorys;
         }
 
         public void Update(Category category)

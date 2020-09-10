@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using WEBP.Core;
-using WEBP.Entities;
+using WEBP.Entities.Database;
 
 namespace WEBP.DAL.Interfaces
 {

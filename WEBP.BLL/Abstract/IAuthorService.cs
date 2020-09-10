@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WEBP.Entities;
+﻿using System.Collections.Generic;
+using WEBP.Entities.Database;
+using WEBP.Entities.UI;
 
 namespace WEBP.BLL.Abstract
 {
     public interface IAuthorService
     {
-        List<Author> GetAll();
+        List<UiAuthor> GetAll();
         void Add(Author authors);
         void Update(Author authors);
         void Delete(Author authors);
-        Author GetAuthorByEmail(Author authors);
+        UiAuthor GetAuthorByEmail(Author authors);
     }
 }

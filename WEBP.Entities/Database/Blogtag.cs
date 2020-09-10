@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WEBP.Core.Entities;
+﻿using WEBP.Core.Entities;
 
-namespace WEBP.Entities
+namespace WEBP.Entities.Database
 {
     public class Blogtag: IEntity
     {

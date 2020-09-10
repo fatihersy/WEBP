@@ -23,16 +23,16 @@ namespace WEBP.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddScoped<IBlogDal, EfBlogDal>();
-            services.AddScoped<ITagService, TagManager>();
-            services.AddScoped<ITagDal, EfTagDal>();
-            services.AddScoped<IAuthorService, AuthorManager>();
-            services.AddScoped<IAuthorDal, EfAuthorDal>();
-            services.AddScoped<IAuthorService, AuthorManager>();
-            services.AddScoped<IBlogtagDal, EfBlogtagDal>();
-            services.AddScoped<IBlogtagService, BlogtagManager>();
-            services.AddScoped<ICategoryDal, EfCategoryDal>();
-            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddTransient<IBlogDal, EfBlogDal>();
+            services.AddTransient<ITagService, TagManager>();
+            services.AddTransient<ITagDal, EfTagDal>();
+            services.AddTransient<IAuthorService, AuthorManager>();
+            services.AddTransient<IAuthorDal, EfAuthorDal>();
+            services.AddTransient<IAuthorService, AuthorManager>();
+            services.AddTransient<IBlogtagDal, EfBlogtagDal>();
+            services.AddTransient<IBlogtagService, BlogtagManager>();
+            services.AddTransient<ICategoryDal, EfCategoryDal>();
+            services.AddTransient<ICategoryService, CategoryManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,10 +60,6 @@ namespace WEBP.WebAPI
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}"
-                    );
-                endpoints.MapControllerRoute(
-                    name: "list",
-                    pattern: "{controller=list}/{action=Index}"
                     );
             });
         }

@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WEBP.Entities;
+﻿using System.Collections.Generic;
+using WEBP.Entities.Database;
+using WEBP.Entities.UI;
 
 namespace WEBP.BLL.Abstract
 {
     public interface ITagService
     {
-        List<Tag> GetAll();
+        List<UiTag> GetAll();
         void Add(Tag tag);
         void Update(Tag tag);
         void Delete(Tag tag);
-        Tag GetTagByName(Tag tag);
+        UiTag GetTagByName(Tag tag);
     }
 }

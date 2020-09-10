@@ -12,25 +12,18 @@ namespace WEBP.WebAPI.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private readonly BlogManager     _blogManager;
-        private readonly CategoryManager _categoryManager;
-        private readonly AuthorManager   _authorManager;
-
 
         public HomeController(ILogger<HomeController> logger, IBlogDal blogsDal, ICategoryDal categoryDal, IAuthorDal authorDal)
         {
             _logger = logger;
-            _blogManager = new BlogManager(blogsDal);
-            _categoryManager = new CategoryManager(categoryDal);
-            _authorManager = new AuthorManager(authorDal);
+            _blogManager = new BlogManager(blogsDal, categoryDal, authorDal);
         }
 
         public IActionResult Index()
         {
-            return View(new ListViewModel 
+            return View(new HomeViewModel 
             {
-                blogs = _blogManager.GetAll(),
-                categories = _categoryManager.GetAll(),
-                authors = _authorManager.GetAll()
+                blogs = _blogManager.GetAll()
             });
         }
 

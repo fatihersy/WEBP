@@ -1,8 +1,25 @@
 ﻿
-const sidebarButtons = {
+const sidepanelButtonNums = {
     INCELEME: 0,
     HABER: 1,
     ESPOR: 2
+}
+
+const categories = {
+    INCELEME: "INCELEME",
+    HABER: "HABER",
+    ESPOR: "ESPOR"
+}
+
+const classes = {
+    DSIDEPANELITEM: ".sidepanel-item",
+    SIDEPANELITEM:  "sidepanel-item",
+    DPOST:  ".post",
+    POST:   "post",
+    DPOSTCATEGORY: ".post-category",
+    POSTCATEGORY: "post-category",
+    DSIDEPANELACTIVEITEM: ".sidepanel-item-active",
+    SIDEPANELACTIVEITEM: "sidepanel-item-active"
 }
 
 // READY FUNCTIONS
@@ -14,43 +31,159 @@ $(function () {
     $('[data-toggle]').tooltip();
 });
 
-
-$( $('.sidepanel-item')[sidebarButtons.INCELEME] ) .click(function ()
+$( $( classes.DSIDEPANELITEM )[ sidepanelButtonNums.INCELEME ]) .click(function ()
 {
-    $("table tr td .category").each(function ()
+    if ( !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.INCELEME]).hasClass(classes.SIDEPANELACTIVEITEM) )
     {
-        if ($(this).text() == "denemeİ1") {
-            console.log($(this).parent().hide());
+        if (
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.HABER]).hasClass(classes.SIDEPANELACTIVEITEM) &&
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).hasClass(classes.SIDEPANELACTIVEITEM)
+        ) {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                if ($(this).html() != categories.INCELEME)
+                {
+                    $(this).parent().hide();
+                }
+            });
+
         }
-    });
+        else
+        {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                if ($(this).html() == categories.INCELEME)
+                {
+                    $(this).parent().show();
+                }
+            });
+        }
+    }
+    else
+    {
+        if (
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.HABER]).hasClass(classes.SIDEPANELACTIVEITEM) &&
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).hasClass(classes.SIDEPANELACTIVEITEM)
+        ) {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                $(this).parent().show();
+            });
+        }
+        else {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                if ($(this).html() == categories.INCELEME)
+                {
+                    $(this).parent().hide();
+                }
+            });
+        }
+    }
+    $(this).toggleClass(classes.SIDEPANELACTIVEITEM);
 });
 
 
-$( $('.sidepanel-item')[sidebarButtons.HABER] ).click(function ()
+$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.HABER]).click(function ()
 {
-    $("table tr td .category").each(function ()
+    if (!$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.HABER]).hasClass(classes.SIDEPANELACTIVEITEM))
     {
-        if ($(this).text() == "denemeİ1") {
-            console.log($(this).parent().hide());
+        if (
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.INCELEME]).hasClass(classes.SIDEPANELACTIVEITEM) &&
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).hasClass(classes.SIDEPANELACTIVEITEM)
+           ) {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                if ($(this).html() != categories.HABER)
+                {
+                    $(this).parent().hide();
+                }
+            });
         }
-    });
+        else {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                if ($(this).html() == categories.HABER)
+                {
+                    $(this).parent().show();
+                }
+            });
+        }
+    }
+    else {
+        if (
+            !($($(classes.DSIDEPANELITEM)[sidepanelButtonNums.INCELEME]).hasClass(classes.SIDEPANELACTIVEITEM)) &&
+            !($($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).hasClass(classes.SIDEPANELACTIVEITEM))
+        ) {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                $(this).parent().show();
+            });
+        }
+        else {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                if ($(this).html() == categories.HABER)
+                {
+                    $(this).parent().hide();
+                }
+            });
+        }
+    }
+    $(this).toggleClass(classes.SIDEPANELACTIVEITEM);
 });
 
 
-$( $('.sidepanel-item')[sidebarButtons.HABER] ).click(function ()
+$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).click(function ()
 {
-    $("table tr td .category").each(function ()
+    if (!$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).hasClass(classes.SIDEPANELACTIVEITEM))
     {
-        if ($(this).text() == "denemeİ1") {
-            console.log($(this).parent().hide());
+        if (
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.HABER]).hasClass(classes.SIDEPANELACTIVEITEM) &&
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.INCELEME]).hasClass(classes.SIDEPANELACTIVEITEM)
+        ) {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                if ($(this).html() != categories.ESPOR)
+                {
+                    $(this).parent().hide();
+                }
+            });
         }
-    });
+        else
+        {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                if ($(this).html() == categories.ESPOR)
+                {
+                    $(this).parent().show();
+                }
+            });
+        }
+    }
+    else {
+        if (
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.HABER]).hasClass(classes.SIDEPANELACTIVEITEM) &&
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.INCELEME]).hasClass(classes.SIDEPANELACTIVEITEM)
+        ) {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                $(this).parent().show();
+            });
+        }
+
+        else {
+            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
+            {
+                if ($(this).html() == categories.ESPOR)
+                {
+                    $(this).parent().hide();
+                }
+            });
+        }
+    }
+    $(this).toggleClass(classes.SIDEPANELACTIVEITEM);
 });
-
-
-
-
-
 
 
 /*

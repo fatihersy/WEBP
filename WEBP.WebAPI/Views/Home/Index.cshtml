@@ -1,20 +1,15 @@
-﻿@model WEBP.WebAPI.Models.ListViewModel
+﻿@model WEBP.WebAPI.Models.HomeViewModel
 
 @{ ViewData["Title"] = "Home Page"; }
 
 
-	@foreach (var item in Model.blogs)
-	{
-		<div class="post">
-
-			<p class="lead">@item.title</p>
-
-			<hr class="my-4">
-
-			<p>@item.description</p>
-
-			<p> @Model.categories.Find(c => c.id == item.categoryid).name </p>
-
-		</div>
-	}
+@foreach (var item in Model.blogs)
+{
+<figure class="post" style="background-color:@item.postcolor">
+	<img src="~/Resources/b.jpeg" alt="Image" />
+	<figcaption class="post-title">@item.title</figcaption> 
+	<figcaption class="post-description">@item.description</figcaption>
+	<figcaption class="post-category">@item.category</figcaption>
+</figure>
+}
 

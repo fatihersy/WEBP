@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
-using WEBP.Entities;
+using WEBP.Entities.Database;
+using WEBP.Entities.UI;
 
 namespace WEBP.BLL.Abstract
 {
     public interface IBlogService
     {
-        List<Blog> GetAll();
+        List<UiBlog> GetAll();
         void Add(Blog blog);
         void Update(Blog blog);
         void Delete(int blogId);
-        Blog GetById(int blogId);
+        UiBlog GetById(int blogId);
     }
 }

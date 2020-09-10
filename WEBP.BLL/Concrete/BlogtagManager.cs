@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using WEBP.BLL.Abstract;
 using WEBP.DAL.Interfaces;
-using WEBP.Entities;
+using WEBP.Entities.UI;
+using WEBP.Entities.Database;
 
 namespace WEBP.BLL.Concrete
 {

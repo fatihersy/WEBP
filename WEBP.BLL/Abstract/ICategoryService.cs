@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WEBP.Entities;
+﻿using System.Collections.Generic;
+using WEBP.Entities.Database;
+using WEBP.Entities.UI;
 
 namespace WEBP.BLL.Abstract
 {
     public interface ICategoryService
     {
-        List<Category> GetAll();
+        List<UiCategory> GetAll();
         void Add(Category category);
         void Update(Category category);
         void Delete(string categoryName);
