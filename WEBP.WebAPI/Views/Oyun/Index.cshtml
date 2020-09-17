@@ -1,0 +1,15 @@
+﻿@model WEBP.WebAPI.Models.OyunViewModel
+
+@{ ViewData["Title"] = "Oyun"; }
+
+
+@foreach (var item in Model.blogs)
+{
+<figure class="post" style="background-color:@item.postcolor">
+	<img src="~/Resources/b.jpeg" alt="Image" />
+	<figcaption class="post-title">@item.title</figcaption> 
+	<figcaption class="post-description">@item.description</figcaption>
+	<figcaption class="post-category">@item.category</figcaption>
+</figure>
+}
+

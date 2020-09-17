@@ -6,9 +6,9 @@ const sidepanelButtonNums = {
 }
 
 const categories = {
-    INCELEME: "INCELEME",
-    HABER: "HABER",
-    ESPOR: "ESPOR"
+    INCELEME: '[inceleme]',
+    HABER: '[haber]',
+    ESPOR: '[espor]'
 }
 
 const classes = {
@@ -24,9 +24,6 @@ const classes = {
 
 // READY FUNCTIONS
 
-
-
-
 $(function () {
     $('[data-toggle]').tooltip();
 });
@@ -39,24 +36,11 @@ $( $( classes.DSIDEPANELITEM )[ sidepanelButtonNums.INCELEME ]) .click(function 
             !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.HABER]).hasClass(classes.SIDEPANELACTIVEITEM) &&
             !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).hasClass(classes.SIDEPANELACTIVEITEM)
         ) {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                if ($(this).html() != categories.INCELEME)
-                {
-                    $(this).parent().hide();
-                }
-            });
-
+                    $( categories.HABER + ', ' + categories.ESPOR ).hide();
         }
         else
         {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                if ($(this).html() == categories.INCELEME)
-                {
-                    $(this).parent().show();
-                }
-            });
+            $( categories.INCELEME ).show();
         }
     }
     else
@@ -65,19 +49,11 @@ $( $( classes.DSIDEPANELITEM )[ sidepanelButtonNums.INCELEME ]) .click(function 
             !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.HABER]).hasClass(classes.SIDEPANELACTIVEITEM) &&
             !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).hasClass(classes.SIDEPANELACTIVEITEM)
         ) {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                $(this).parent().show();
-            });
+                    $(categories.HABER + ', ' + categories.ESPOR + ', ' + categories.INCELEME ).show();
         }
-        else {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                if ($(this).html() == categories.INCELEME)
-                {
-                    $(this).parent().hide();
-                }
-            });
+        else
+        {
+            $( categories.INCELEME ).hide();
         }
     }
     $(this).toggleClass(classes.SIDEPANELACTIVEITEM);
@@ -91,43 +67,25 @@ $($(classes.DSIDEPANELITEM)[sidepanelButtonNums.HABER]).click(function ()
         if (
             !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.INCELEME]).hasClass(classes.SIDEPANELACTIVEITEM) &&
             !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).hasClass(classes.SIDEPANELACTIVEITEM)
-           ) {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                if ($(this).html() != categories.HABER)
-                {
-                    $(this).parent().hide();
-                }
-            });
+        ) {
+            $(categories.INCELEME + ', ' + categories.ESPOR).hide();
         }
-        else {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                if ($(this).html() == categories.HABER)
-                {
-                    $(this).parent().show();
-                }
-            });
+        else
+        {
+            $( categories.HABER ).show();
         }
     }
-    else {
+    else
+    {
         if (
-            !($($(classes.DSIDEPANELITEM)[sidepanelButtonNums.INCELEME]).hasClass(classes.SIDEPANELACTIVEITEM)) &&
-            !($($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).hasClass(classes.SIDEPANELACTIVEITEM))
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.INCELEME]).hasClass(classes.SIDEPANELACTIVEITEM) &&
+            !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).hasClass(classes.SIDEPANELACTIVEITEM)
         ) {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                $(this).parent().show();
-            });
+            $(categories.HABER + ', ' + categories.ESPOR + ', ' + categories.INCELEME).show();
         }
-        else {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                if ($(this).html() == categories.HABER)
-                {
-                    $(this).parent().hide();
-                }
-            });
+        else
+        {
+            $( categories.HABER ).hide();
         }
     }
     $(this).toggleClass(classes.SIDEPANELACTIVEITEM);
@@ -142,44 +100,22 @@ $($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).click(function ()
             !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.HABER]).hasClass(classes.SIDEPANELACTIVEITEM) &&
             !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.INCELEME]).hasClass(classes.SIDEPANELACTIVEITEM)
         ) {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                if ($(this).html() != categories.ESPOR)
-                {
-                    $(this).parent().hide();
-                }
-            });
+            $(categories.HABER + ', ' + categories.INCELEME).hide();
         }
-        else
-        {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                if ($(this).html() == categories.ESPOR)
-                {
-                    $(this).parent().show();
-                }
-            });
+        else {
+            $( categories.ESPOR ).show();
         }
     }
-    else {
+    else
+    {
         if (
             !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.HABER]).hasClass(classes.SIDEPANELACTIVEITEM) &&
             !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.INCELEME]).hasClass(classes.SIDEPANELACTIVEITEM)
         ) {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                $(this).parent().show();
-            });
+            $(categories.HABER + ', ' + categories.ESPOR + ', ' + categories.INCELEME).show();
         }
-
         else {
-            $(classes.DPOST + " " + classes.DPOSTCATEGORY).each(function ()
-            {
-                if ($(this).html() == categories.ESPOR)
-                {
-                    $(this).parent().hide();
-                }
-            });
+            $( categories.ESPOR ).hide();
         }
     }
     $(this).toggleClass(classes.SIDEPANELACTIVEITEM);

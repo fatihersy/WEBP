@@ -20,5 +20,7 @@ namespace WEBP.DAL
         public DbSet<Blogtag> Blogtag { get; set; }
 
         public DbSet<Category> Category { get; set; }
+
+        public DbSet<Navitem> Navitem { get; set; }
     }
 }

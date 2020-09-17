@@ -2,14 +2,42 @@
 
 @{ ViewData["Title"] = "Home Page"; }
 
+<div class="content-header-div">
+	<img class="content-header" src="../Resources/b.jpeg" />
+</div>
+<div class="posts">
 
-@foreach (var item in Model.blogs)
-{
-<figure class="post" style="background-color:@item.postcolor">
-	<img src="~/Resources/b.jpeg" alt="Image" />
-	<figcaption class="post-title">@item.title</figcaption> 
-	<figcaption class="post-description">@item.description</figcaption>
-	<figcaption class="post-category">@item.category</figcaption>
-</figure>
-}
+	@foreach (var item in Model.blogs)
+	{
+		<div class="post" @item.category>
+
+			<div class="post-img"></div>
+
+			<div class="post-info">
+				<h6 class="post-title">@item.title</h6>
+			</div>
+
+		</div>
+	}
+	
+	<nav>
+		<ul class="pagination">
+			<li>
+				<a class="page-link" href="#">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+			<li> <a class="page-link" href="#">1</a> </li>
+			<li> <a class="page-link" href="#">2</a> </li>
+			<li> <a class="page-link" href="#">3</a> </li>
+			<li>
+				<a class="page-link" href="#">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+
+</div>
 

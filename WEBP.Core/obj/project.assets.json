@@ -868,11 +868,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj",
+      "projectUniqueName": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj",
       "projectName": "WEBP.Core",
-      "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj",
+      "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj",
       "packagesPath": "C:\\Users\\supre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\obj\\",
+      "outputPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\supre\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -919,7 +919,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

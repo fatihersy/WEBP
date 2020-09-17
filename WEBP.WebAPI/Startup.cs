@@ -33,6 +33,8 @@ namespace WEBP.WebAPI
             services.AddTransient<IBlogtagService, BlogtagManager>();
             services.AddTransient<ICategoryDal, EfCategoryDal>();
             services.AddTransient<ICategoryService, CategoryManager>();
+            services.AddTransient<INavitemDal, EfNavitemDal>();
+            services.AddTransient<INavitemService, NavitemManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,10 +59,7 @@ namespace WEBP.WebAPI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}"
-                    );
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
