@@ -7,8 +7,8 @@
 </div>
 <div class="posts">
 
-	@foreach (var item in Model.blogs)
-	{
+		@foreach (var item in Model.blogs)
+		{
 		<div class="post" @item.category>
 
 			<div class="post-img"></div>
@@ -18,23 +18,33 @@
 			</div>
 
 		</div>
-	}
-	
-	<nav>
+		}
+
+	<nav id="pagination-nav">
 		<ul class="pagination">
-			<li>
-				<a class="page-link" href="#">
-					<span aria-hidden="true">&laquo;</span>
-				</a>
+
+			<li class="pg-link">
+				<a href="/?page=1">First</a>
 			</li>
-			<li> <a class="page-link" href="#">1</a> </li>
-			<li> <a class="page-link" href="#">2</a> </li>
-			<li> <a class="page-link" href="#">3</a> </li>
-			<li>
-				<a class="page-link" href="#">
-					<span aria-hidden="true">&raquo;</span>
-				</a>
+
+			@for (int i = 1; i <= ViewBag.ipages; i++)
+			{
+				if (i == ViewBag.page)
+				{
+					<li class="pg-link active-link"> <a href="/?page=@i">@i</a> </li>
+
+				}
+				else
+				{
+					<li class="pg-link"> <a href="/?page=@i">@i</a> </li>
+
+				}
+			}
+
+			<li class="pg-link">
+				<a href="/?page=@ViewBag.ipages">Last</a>
 			</li>
+
 		</ul>
 	</nav>
 

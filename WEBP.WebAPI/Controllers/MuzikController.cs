@@ -20,13 +20,13 @@ namespace WEBP.WebAPI.Controllers
             _navitemManager = new NavitemManager(navitemDal);
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page)
         {
             ViewBag.navitems = _navitemManager.GetAll();
 
             return View(new MuzikViewModel
             {
-                blogs = _blogManager.GetAll()
+                blogs = _blogManager.GetAll(page*10, 10)
             });
 
         }

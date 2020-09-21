@@ -59,7 +59,10 @@ namespace WEBP.WebAPI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=home}/{action=Index}/{page?}"
+                    );
             });
         }
     }

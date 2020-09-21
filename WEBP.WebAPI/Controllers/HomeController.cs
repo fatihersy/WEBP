@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WEBP.BLL.Concrete;
@@ -14,21 +15,34 @@ namespace WEBP.WebAPI.Controllers
         private readonly BlogManager     _blogManager;
         private readonly NavitemManager _navitemManager;
 
-        public HomeController(ILogger<HomeController> logger, IBlogDal blogsDal, ICategoryDal categoryDal, IAuthorDal authorDal, INavitemDal navitemDal)
+        public HomeController(ILogger<HomeController> logger, IBlogDal blogsDal, INavitemDal navitemDal)
         {
             _logger = logger;
-            _blogManager = new BlogManager(blogsDal, categoryDal, authorDal);
+            _blogManager = new BlogManager(blogsDal, null, null);
             _navitemManager = new NavitemManager(navitemDal);
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page)
         {
             ViewBag.navitems = _navitemManager.GetAll();
 
-            return View( new HomeViewModel
+            var blogs = _blogManager.GetAll(page, 12);
+
+            ViewBag.page = page;
+            ViewBag.ipages = 
+                Math.Ceiling( 
+                    (float) _blogManager.GetRowCount() / (float) 12 
+                );
+            
+            if( blogs.Count != 0 )
             {
-                blogs = _blogManager.GetAll()
-            });
+                return View( new HomeViewModel
+                {
+                    blogs = blogs
+                });
+            }
+
+            return Index(1);
         }
 
         public IActionResult Privacy()

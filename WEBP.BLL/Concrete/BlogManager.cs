@@ -3,6 +3,8 @@ using WEBP.BLL.Abstract;
 using WEBP.DAL.Interfaces;
 using WEBP.Entities.UI;
 using WEBP.Entities.Database;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 
 namespace WEBP.BLL.Concrete
 {
@@ -18,6 +20,8 @@ namespace WEBP.BLL.Concrete
             _authorDal = authorDal;
         }
 
+        public int GetRowCount() => _blogDal.GetList().Count();
+
         public void Add(Blog blog)
         {
             _blogDal.Add(blog);
@@ -28,24 +32,21 @@ namespace WEBP.BLL.Concrete
             _blogDal.Delete( new Blog{ id = blogId } );
         }
 
-        public List<UiBlog> GetAll()
+        public List<UiBlog> GetAll(int page, int pageSize)
         {
-            List<Blog> blogs = _blogDal.GetList();
-            List<Category> categorys = _categoryDal.GetList();
-            List<Author> authors = _authorDal.GetList();
+            if (page < 1) page = 0;
+            else page--;
+
+            page = page * pageSize;
+
+            List<Blog> blogs = _blogDal.GetList().Skip(page).Take(pageSize).ToList();
             List<UiBlog> uiBlogs = new List<UiBlog>();
 
             foreach (var item in blogs)
             {
-                Category category = categorys.Find(c => c.id == item.categoryid);
-
                 UiBlog uiBlog = new UiBlog
                 {
-                    title = item.title,
-                    description = item.description,
-                    category = category.name,
-                    postcolor = category.postcolor,
-                    author = authors.Find(a => a.id == item.authorId).name,
+                    title = item.title
                 };
 
                 uiBlogs.Add(uiBlog);
