@@ -24,11 +24,23 @@ namespace WEBP.WebAPI.Controllers
         {
             ViewBag.navitems = _navitemManager.GetAll();
 
-            return View(new MuzikViewModel
-            {
-                blogs = _blogManager.GetAll(page*10, 10)
-            });
+            var blogs = _blogManager.GetAll(page, 12);
 
+            ViewBag.page = page;
+            ViewBag.ipages =
+                Math.Ceiling(
+                    (float)_blogManager.GetRowCount() / (float)12
+                );
+
+            if (blogs.Count != 0)
+            {
+                return View(new MuzikViewModel
+                {
+                    blogs = blogs
+                });
+            }
+
+            return Index(1);
         }
     }
 }

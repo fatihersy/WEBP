@@ -4,7 +4,6 @@ using WEBP.DAL.Interfaces;
 using WEBP.Entities.UI;
 using WEBP.Entities.Database;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 
 namespace WEBP.BLL.Concrete
 {
@@ -36,7 +35,6 @@ namespace WEBP.BLL.Concrete
         {
             if (page < 1) page = 0;
             else page--;
-
             page = page * pageSize;
 
             List<Blog> blogs = _blogDal.GetList().Skip(page).Take(pageSize).ToList();
@@ -46,7 +44,9 @@ namespace WEBP.BLL.Concrete
             {
                 UiBlog uiBlog = new UiBlog
                 {
-                    title = item.title
+                    title = item.title,
+                    category = _categoryDal.Get(c => c.id == item.categoryid).name,
+                    uniqueid = item.uniqueid
                 };
 
                 uiBlogs.Add(uiBlog);
@@ -55,14 +55,13 @@ namespace WEBP.BLL.Concrete
             return uiBlogs;
         }
 
-        public UiBlog GetById(int blogId)
+        public UiBlog GetById(string blogId)
         {
-            Blog blog = _blogDal.Get(a => a.id == blogId);
+            Blog blog = _blogDal.Get(a => a.uniqueid == blogId);
 
             return new UiBlog
             {
                 title = blog.title,
-                description = blog.description,
                 content = blog.content,
                 category = _categoryDal.Get(c => c.id == blog.categoryid).name,
                 author = _authorDal.Get(a => a.id == blog.authorId).name

@@ -1,6 +1,9 @@
 ﻿@model WEBP.WebAPI.Models.HomeViewModel
 
-@{ ViewData["Title"] = "Home Page"; }
+@{
+	Layout = "~/Views/Shared/_PageLayout.cshtml";
+	ViewData["Title"] = "Home Page";
+}
 
 <div class="content-header-div">
 	<img class="content-header" src="../Resources/b.jpeg" />
@@ -9,15 +12,12 @@
 
 		@foreach (var item in Model.blogs)
 		{
-		<div class="post" @item.category>
-
-			<div class="post-img"></div>
-
-			<div class="post-info">
-				<h6 class="post-title">@item.title</h6>
+			<div class="post" onclick="goToBlog('@item.uniqueid');" @item.category>
+				<div class="post-img"></div>
+					<div class="post-info">
+						<h6 class="post-title">@item.title</h6>
+					</div>
 			</div>
-
-		</div>
 		}
 
 	<nav id="pagination-nav">

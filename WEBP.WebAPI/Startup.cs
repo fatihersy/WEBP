@@ -63,6 +63,14 @@ namespace WEBP.WebAPI
                     name: "default",
                     pattern: "{controller=home}/{action=Index}/{page?}"
                     );
+                endpoints.MapControllerRoute(
+                    name: "secondary",
+                    pattern: "{controller}/{action=Index}/{page?}"
+                    );
+                endpoints.MapControllerRoute(
+                    name: "blog",
+                    pattern: "{controller}/{action=Index}/{id}"
+                    );
             });
         }
     }

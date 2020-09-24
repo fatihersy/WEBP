@@ -12,6 +12,6 @@ namespace WEBP.BLL.Abstract
         void Add(Blog blog);
         void Update(Blog blog);
         void Delete(int blogId);
-        UiBlog GetById(int blogId);
+        UiBlog GetById(string blogId);
     }
 }

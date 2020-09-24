@@ -14,9 +14,9 @@ namespace WEBP.WebAPI.Controllers
         private readonly BlogManager _blogManager;
         private readonly NavitemManager _navitemManager;
 
-        public OyunController(IBlogDal blogsDal, ICategoryDal categoryDal, IAuthorDal authorDal, INavitemDal navitemDal)
+        public OyunController(IBlogDal blogsDal, ICategoryDal categoryDal, INavitemDal navitemDal)
         {
-            _blogManager = new BlogManager(blogsDal, categoryDal, authorDal);
+            _blogManager = new BlogManager(blogsDal, categoryDal, null);
             _navitemManager = new NavitemManager(navitemDal);
         }
 
@@ -24,11 +24,23 @@ namespace WEBP.WebAPI.Controllers
         {
             ViewBag.navitems = _navitemManager.GetAll();
 
-            return View(new OyunViewModel
-            {
-                blogs = _blogManager.GetAll(page*10, 10)
-            });
+            var blogs = _blogManager.GetAll(page, 12);
 
+            ViewBag.page = page;
+            ViewBag.ipages =
+                Math.Ceiling(
+                    (float)_blogManager.GetRowCount() / (float)12
+                );
+
+            if (blogs.Count != 0)
+            {
+                return View(new OyunViewModel
+                {
+                    blogs = blogs
+                });
+            }
+
+            return Index(1);
         }
     }
 }

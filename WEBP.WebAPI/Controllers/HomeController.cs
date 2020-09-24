@@ -15,10 +15,10 @@ namespace WEBP.WebAPI.Controllers
         private readonly BlogManager     _blogManager;
         private readonly NavitemManager _navitemManager;
 
-        public HomeController(ILogger<HomeController> logger, IBlogDal blogsDal, INavitemDal navitemDal)
+        public HomeController(ILogger<HomeController> logger, IBlogDal blogsDal, ICategoryDal categoryDal, INavitemDal navitemDal)
         {
             _logger = logger;
-            _blogManager = new BlogManager(blogsDal, null, null);
+            _blogManager = new BlogManager(blogsDal, categoryDal, null);
             _navitemManager = new NavitemManager(navitemDal);
         }
 
@@ -43,11 +43,6 @@ namespace WEBP.WebAPI.Controllers
             }
 
             return Index(1);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View("Privacy");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
