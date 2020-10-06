@@ -1,7 +1,8 @@
-﻿using System;
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using WEBP.BLL.Concrete;
 using WEBP.DAL.Interfaces;
 using WEBP.WebAPI.Models;
@@ -12,7 +13,7 @@ namespace WEBP.WebAPI.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        private readonly BlogManager     _blogManager;
+        private readonly BlogManager _blogManager;
         private readonly NavitemManager _navitemManager;
 
         public HomeController(ILogger<HomeController> logger, IBlogDal blogsDal, ICategoryDal categoryDal, INavitemDal navitemDal)
@@ -22,27 +23,28 @@ namespace WEBP.WebAPI.Controllers
             _navitemManager = new NavitemManager(navitemDal);
         }
 
-        public IActionResult Index(int page)
+        [HttpGet]
+        public async Task<IActionResult> Index(int page)
         {
-            ViewBag.navitems = _navitemManager.GetAll();
+            ViewBag.navitems = await _navitemManager.GetAllAsync();
 
-            var blogs = _blogManager.GetAll(page, 12);
+            var blogs = await _blogManager.GetAllAsync(page, 12);
 
             ViewBag.page = page;
-            ViewBag.ipages = 
-                Math.Ceiling( 
-                    (float) _blogManager.GetRowCount() / (float) 12 
+            ViewBag.ipages =
+                Math.Ceiling(
+                    (float) ( await _blogManager.GetRowCountAsync() )  / (float)12
                 );
-            
-            if( blogs.Count != 0 )
+
+            if (blogs.Count != 0)
             {
-                return View( new HomeViewModel
+                return View(new HomeViewModel
                 {
                     blogs = blogs
                 });
             }
 
-            return Index(1);
+            return NotFound();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

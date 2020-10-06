@@ -1,20 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using WEBP.Core.Entities;
 
 namespace WEBP.Core
 {
-    public interface IEntityRepository<T> where T:class, IEntity, new()
+    public interface IEntityRepository<T> where T : class, IEntity, new()
     {
-        T Get(Expression<Func<T, bool>> filter = null);
+        Task<T> GetAsync(Expression<Func<T, bool>> filter = null);
 
-        List<T> GetList(Expression<Func<T, bool>> filter = null);
+        Task<List<T>> GetListAsync(Expression<Func<T, bool>> filter = null);
 
-        void Add(T Entity);
+        Task<List<T>> GetListAsync(int take, int skip, Expression<Func<T, bool>> filter = null);
 
-        void Update(T Entity);
+        Task<bool> AddAsync(T Entity);
 
-        void Delete(T Entity);
+        Task<bool> UpdateAsync(T Entity);
+
+        Task<bool> DeleteAsync(T Entity);
+
+        Task<int> GetRowCountAsync();
     }
 }

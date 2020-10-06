@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using WEBP.BLL.Concrete;
 using WEBP.DAL.Interfaces;
 using WEBP.WebAPI.Models;
@@ -14,22 +12,23 @@ namespace WEBP.WebAPI.Controllers
         private readonly BlogManager _blogManager;
         private readonly NavitemManager _navitemManager;
 
-        public MuzikController(IBlogDal blogsDal, ICategoryDal categoryDal, IAuthorDal authorDal, INavitemDal navitemDal)
+        public MuzikController(IBlogDal blogsDal, ICategoryDal categoryDal, INavitemDal navitemDal)
         {
-            _blogManager = new BlogManager(blogsDal, categoryDal, authorDal);
+            _blogManager = new BlogManager(blogsDal, categoryDal, null);
             _navitemManager = new NavitemManager(navitemDal);
         }
 
-        public IActionResult Index(int page)
+        [HttpGet]
+        public async Task<IActionResult> Index(int page)
         {
-            ViewBag.navitems = _navitemManager.GetAll();
+            ViewBag.navitems = await _navitemManager.GetAllAsync();
 
-            var blogs = _blogManager.GetAll(page, 12);
+            var blogs = await _blogManager.GetAllAsync(page, 12);
 
             ViewBag.page = page;
             ViewBag.ipages =
                 Math.Ceiling(
-                    (float)_blogManager.GetRowCount() / (float)12
+                    (float)(await _blogManager.GetRowCountAsync()) / (float)12
                 );
 
             if (blogs.Count != 0)
@@ -40,7 +39,7 @@ namespace WEBP.WebAPI.Controllers
                 });
             }
 
-            return Index(1);
+            return BadRequest();
         }
     }
 }

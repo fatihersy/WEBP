@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using WEBP.Entities.Database;
 using WEBP.Entities.UI;
 
@@ -6,9 +7,10 @@ namespace WEBP.BLL.Abstract
 {
     public interface ICategoryService
     {
-        List<UiCategory> GetAll();
-        void Add(Category category);
-        void Update(Category category);
-        void Delete(string categoryName);
+        Task<List<Category>> GetAllWithIdAsync();
+        Task<List<UiCategory>> GetAllAsync();
+        Task<bool> AddAsync(Category category);
+        Task<bool> UpdateAsync(Category category);
+        Task<bool> DeleteAsync(string categoryName);
     }
 }

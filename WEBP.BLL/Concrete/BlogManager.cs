@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using WEBP.BLL.Abstract;
 using WEBP.DAL.Interfaces;
-using WEBP.Entities.UI;
 using WEBP.Entities.Database;
-using System.Linq;
+using WEBP.Entities.UI;
 
 namespace WEBP.BLL.Concrete
 {
@@ -19,25 +20,14 @@ namespace WEBP.BLL.Concrete
             _authorDal = authorDal;
         }
 
-        public int GetRowCount() => _blogDal.GetList().Count();
-
-        public void Add(Blog blog)
-        {
-            _blogDal.Add(blog);
-        }
-
-        public void Delete(int blogId)
-        {
-            _blogDal.Delete( new Blog{ id = blogId } );
-        }
-
-        public List<UiBlog> GetAll(int page, int pageSize)
+        public async Task<List<UiBlog>> GetAllAsync(int page, int pageSize)
         {
             if (page < 1) page = 0;
             else page--;
             page = page * pageSize;
 
-            List<Blog> blogs = _blogDal.GetList().Skip(page).Take(pageSize).ToList();
+            List<Blog> blogs = await _blogDal.GetListAsync(pageSize, page);
+            List<Category> categories = await _categoryDal.GetListAsync();
             List<UiBlog> uiBlogs = new List<UiBlog>();
 
             foreach (var item in blogs)
@@ -45,7 +35,7 @@ namespace WEBP.BLL.Concrete
                 UiBlog uiBlog = new UiBlog
                 {
                     title = item.title,
-                    category = _categoryDal.Get(c => c.id == item.categoryid).name,
+                    category = categories.Find(c => c.id == item.categoryid).name,
                     uniqueid = item.uniqueid
                 };
 
@@ -55,22 +45,49 @@ namespace WEBP.BLL.Concrete
             return uiBlogs;
         }
 
-        public UiBlog GetById(string blogId)
+        public async Task<List<UiBlog>> GetAllAsync()
         {
-            Blog blog = _blogDal.Get(a => a.uniqueid == blogId);
+            List<Blog> blogs = await _blogDal.GetListAsync();
+            List<Category> categories = await _categoryDal.GetListAsync();
+            List<UiBlog> uiBlogs = new List<UiBlog>();
+
+            foreach (var item in blogs)
+            {
+                UiBlog uiBlog = new UiBlog
+                {
+                    title = item.title,
+                    category = categories.Find(c => c.id == item.categoryid).name,
+                    uniqueid = item.uniqueid
+                };
+
+                uiBlogs.Add(uiBlog);
+            }
+
+            return uiBlogs;
+        }
+
+        public async Task<UiBlog> GetByIdAsync(Guid blogId)
+        {
+            Blog blog = await _blogDal.GetAsync(a => a.uniqueid == blogId);
 
             return new UiBlog
             {
                 title = blog.title,
                 content = blog.content,
-                category = _categoryDal.Get(c => c.id == blog.categoryid).name,
-                author = _authorDal.Get(a => a.id == blog.authorId).name
+                category = ( await _categoryDal.GetAsync(c => c.id == blog.categoryid)).name,
+                author = ( await _authorDal.GetAsync(a => a.id == blog.authorId)).name
             };
         }
 
-        public void Update(Blog blog)
-        {
-            _blogDal.Update(blog);
-        }
+
+        public async Task<bool> AddAsync(Blog blog) => await _blogDal.AddAsync(blog);
+
+        public async Task<bool> UpdateAsync(Blog blog) => await _blogDal.UpdateAsync(blog);
+
+        public async Task<bool> DeleteAsync(Guid blogId) => await _blogDal.DeleteAsync(new Blog { uniqueid = blogId });
+
+        public async Task<List<Blog>> GetAllWithIdAsync() => await _blogDal.GetListAsync();
+
+        public async Task<int> GetRowCountAsync() => await _blogDal.GetRowCountAsync();
     }
 }

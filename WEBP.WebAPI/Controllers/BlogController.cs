@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using WEBP.BLL.Concrete;
 using WEBP.DAL.Interfaces;
 using WEBP.WebAPI.Models;
@@ -20,13 +18,14 @@ namespace WEBP.WebAPI.Controllers
             _navitemManager = new NavitemManager(navitemDal);
         }
 
-        public IActionResult Index(string id)
+        [HttpGet]
+        public async Task<IActionResult> Index(Guid id)
         {
-            ViewBag.navitems = _navitemManager.GetAll();
+            ViewBag.navitems = _navitemManager.GetAllAsync();
 
             return View(new BlogViewModel
             {
-                blog = _blogManager.GetById(id)
+                blog = await _blogManager.GetByIdAsync(id)
             });
         }
     }

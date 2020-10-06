@@ -30,7 +30,6 @@ namespace WEBP.WebAPI
             services.AddTransient<IAuthorDal, EfAuthorDal>();
             services.AddTransient<IAuthorService, AuthorManager>();
             services.AddTransient<IBlogtagDal, EfBlogtagDal>();
-            services.AddTransient<IBlogtagService, BlogtagManager>();
             services.AddTransient<ICategoryDal, EfCategoryDal>();
             services.AddTransient<ICategoryService, CategoryManager>();
             services.AddTransient<INavitemDal, EfNavitemDal>();
@@ -69,7 +68,11 @@ namespace WEBP.WebAPI
                     );
                 endpoints.MapControllerRoute(
                     name: "blog",
-                    pattern: "{controller}/{action=Index}/{id}"
+                    pattern: "{controller=blog}/{action=Index}/{id}"
+                    );
+                endpoints.MapControllerRoute(
+                    name: "panel",
+                    pattern: "{controller=admin}/{action}/"
                     );
             });
         }

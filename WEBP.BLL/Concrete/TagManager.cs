@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using WEBP.BLL.Abstract;
 using WEBP.DAL.Interfaces;
-using WEBP.Entities.UI;
 using WEBP.Entities.Database;
+using WEBP.Entities.UI;
 
 namespace WEBP.BLL.Concrete
 {
@@ -15,19 +16,19 @@ namespace WEBP.BLL.Concrete
             _tagDal = tagsDal;
         }
 
-        public void Add(Tag tag)
+        public async Task<bool> AddAsync(Tag tag)
         {
-            _tagDal.Add(tag);
+            return await _tagDal.AddAsync(tag);
         }
 
-        public void Delete(Tag tag)
+        public async Task<bool> DeleteAsync(Tag tag)
         {
-            _tagDal.Delete(tag);
+            return await _tagDal.DeleteAsync(tag);
         }
 
-        public List<UiTag> GetAll()
+        public async Task< List<UiTag> > GetAllAsync()
         {
-            List<Tag> tags = _tagDal.GetList();
+            List<Tag> tags = await _tagDal.GetListAsync();
             List<UiTag> uiTags = new List<UiTag>();
 
             foreach (var item in tags)
@@ -43,18 +44,18 @@ namespace WEBP.BLL.Concrete
             return uiTags;
         }
 
-        public UiTag GetTagByName(Tag tag)
+        public async Task<UiTag> GetTagByNameAsync(Tag tag)
         {
             return
-                new UiTag 
+                new UiTag
                 {
-                    name = _tagDal.Get(t => t.id == tag.id).name
+                    name = (await _tagDal.GetAsync(t => t.id == tag.id)).name
                 };
         }
 
-        public void Update(Tag tag)
+        public async Task<bool> UpdateAsync(Tag tag)
         {
-            _tagDal.Update(tag);
+            return await _tagDal.UpdateAsync(tag);
         }
     }
 }

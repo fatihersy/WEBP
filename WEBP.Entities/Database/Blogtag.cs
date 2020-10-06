@@ -2,7 +2,7 @@
 
 namespace WEBP.Entities.Database
 {
-    public class Blogtag: IEntity
+    public class Blogtag : IEntity
     {
         public int id { get; set; }
 

@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using WEBP.BLL.Abstract;
 using WEBP.DAL.Interfaces;
-using WEBP.Entities.UI;
 using WEBP.Entities.Database;
+using WEBP.Entities.UI;
 
 namespace WEBP.BLL.Concrete
 {
@@ -15,21 +16,25 @@ namespace WEBP.BLL.Concrete
             _categoryDal = categoryDal;
         }
 
-        public void Add(Category category)
+        public async Task<bool> AddAsync(Category category)
         {
-            _categoryDal.Add(category);
+            return await _categoryDal.AddAsync(category);
         }
 
-        public void Delete(string categoryName)
+        public async Task<Category> GetByNameAsync(string categoryName)
         {
-            _categoryDal.Delete(
-                _categoryDal.Get(   c => c.name == categoryName )
-            );
+            return await _categoryDal.GetAsync(c => c.postcolor == categoryName);
         }
 
-        public List<UiCategory> GetAll()
+        public async Task<bool> DeleteAsync(string categoryName)
         {
-            List<Category> categorys = _categoryDal.GetList();
+           return await _categoryDal.DeleteAsync(
+                  await _categoryDal.GetAsync(c => c.name == categoryName));
+        }
+
+        public async Task<List<UiCategory>> GetAllAsync()
+        {
+            List<Category> categorys = await _categoryDal.GetListAsync();
             List<UiCategory> uiCategorys = new List<UiCategory>();
 
             foreach (var item in categorys)
@@ -46,9 +51,8 @@ namespace WEBP.BLL.Concrete
             return uiCategorys;
         }
 
-        public void Update(Category category)
-        {
-            _categoryDal.Update(category);
-        }
+        public async Task< List<Category> > GetAllWithIdAsync() => await _categoryDal.GetListAsync();
+
+        public async Task<bool> UpdateAsync(Category category) => await _categoryDal.UpdateAsync(category);
     }
 }

@@ -3,7 +3,7 @@ using WEBP.Core.Entities;
 
 namespace WEBP.Entities.Database
 {
-    public class Author: IEntity
+    public class Author : IEntity
     {
         public int id { get; set; }
 

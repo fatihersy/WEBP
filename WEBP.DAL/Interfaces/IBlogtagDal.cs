@@ -3,8 +3,8 @@ using WEBP.Entities.Database;
 
 namespace WEBP.DAL.Interfaces
 {
-    public interface IBlogtagDal : IEntityRepository<Blogtag> 
+    public interface IBlogtagDal : IEntityRepository<Blogtag>
     {
-        
+
     }
 }

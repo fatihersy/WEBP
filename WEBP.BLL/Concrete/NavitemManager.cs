@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 using WEBP.BLL.Abstract;
 using WEBP.DAL.Interfaces;
 using WEBP.Entities.Database;
@@ -16,19 +16,19 @@ namespace WEBP.BLL.Concrete
             _navitemDal = navitemDal;
         }
 
-        public void Add(Navitem navitem)
+        public async Task<bool> AddAsync(Navitem navitem)
         {
-            _navitemDal.Add(navitem);
+            return await _navitemDal.AddAsync(navitem);
         }
 
-        public void Delete(Navitem navitem)
+        public async Task<bool> DeleteAsync(Navitem navitem)
         {
-            _navitemDal.Delete(navitem);
+            return await _navitemDal.DeleteAsync(navitem);
         }
 
-        public List<UiNavitem> GetAll()
+        public async Task<List<UiNavitem>> GetAllAsync()
         {
-            List<Navitem> navitems = _navitemDal.GetList(ni => ni.aktifmi == true);
+            List<Navitem> navitems = await _navitemDal.GetListAsync(ni => ni.aktifmi == true);
             List<UiNavitem> uiNavitems = new List<UiNavitem>();
 
             foreach (var item in navitems)
@@ -47,9 +47,9 @@ namespace WEBP.BLL.Concrete
             return uiNavitems;
         }
 
-        public UiNavitem GetByName(string name)
+        public async Task<UiNavitem> GetByNameAsync(string name)
         {
-            Navitem navitem = _navitemDal.Get( ni => ni.name == name);
+            Navitem navitem = await _navitemDal.GetAsync(ni => ni.name == name);
 
             return new UiNavitem
             {
@@ -60,9 +60,9 @@ namespace WEBP.BLL.Concrete
             };
         }
 
-        public void Update(Navitem navitem)
+        public async Task<bool> UpdateAsync(Navitem navitem)
         {
-            throw new NotImplementedException();
+            return await _navitemDal.UpdateAsync(navitem);
         }
     }
 }

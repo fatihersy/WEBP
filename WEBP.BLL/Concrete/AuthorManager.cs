@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using WEBP.BLL.Abstract;
 using WEBP.DAL.Interfaces;
-using WEBP.Entities.UI;
 using WEBP.Entities.Database;
+using WEBP.Entities.UI;
 
 namespace WEBP.BLL.Concrete
 {
@@ -15,19 +16,19 @@ namespace WEBP.BLL.Concrete
             _authorDal = authorDal;
         }
 
-        public void Add(Author authors)
+        public async Task<bool> AddAsync(Author authors)
         {
-            _authorDal.Add(authors);
+            return await _authorDal.AddAsync(authors);
         }
 
-        public void Delete(Author authors)
+        public async Task<bool> DeleteAsync(Author authors)
         {
-            _authorDal.Add(authors);
+            return await _authorDal.AddAsync(authors);
         }
 
-        public List<UiAuthor> GetAll()
+        public async Task<List<UiAuthor>> GetAllAsync()
         {
-            List<Author> authors = _authorDal.GetList();
+            List<Author> authors = await _authorDal.GetListAsync();
             List<UiAuthor> uiAuthors = new List<UiAuthor>();
 
             foreach (var item in authors)
@@ -46,9 +47,11 @@ namespace WEBP.BLL.Concrete
             return uiAuthors;
         }
 
-        public UiAuthor GetAuthorByEmail(Author authors)
+        public async Task<List<Author>> GetAllWithIdAsync() => await _authorDal.GetListAsync();
+
+        public async Task<UiAuthor> GetAuthorByEmailAsync(Author authors)
         {
-            Author author = _authorDal.Get( a => a.email == authors.email );
+            Author author = await _authorDal.GetAsync(a => a.email == authors.email);
 
             UiAuthor uiAuthor = new UiAuthor
             {
@@ -61,9 +64,9 @@ namespace WEBP.BLL.Concrete
             return uiAuthor;
         }
 
-        public void Update(Author authors)
+        public async Task<bool> UpdateAsync(Author authors)
         {
-            _authorDal.Update(authors);
+            return await _authorDal.UpdateAsync(authors);
         }
     }
 }

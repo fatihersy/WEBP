@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using WEBP.Core.Entities;
 
 namespace WEBP.Core.EntityRepositories
@@ -11,51 +12,72 @@ namespace WEBP.Core.EntityRepositories
         where TEntity : class, IEntity, new()
         where TContext : DbContext, new()
     {
-        public void Add(TEntity Entity)
+        public async Task<bool> AddAsync(TEntity Entity)
         {
             using (var context = new TContext())
             {
                 var addedEntity = context.Entry(Entity);
                 addedEntity.State = EntityState.Added;
-                context.SaveChanges();
+                var changes = await context.SaveChangesAsync();
+                return changes > 0;
             }
         }
 
-        public void Delete(TEntity Entity)
+        public async Task<bool> DeleteAsync(TEntity Entity)
         {
             using (var context = new TContext())
             {
                 var deletedEntity = context.Entry(Entity);
                 deletedEntity.State = EntityState.Deleted;
-                context.SaveChanges();
+                var changes = await context.SaveChangesAsync();
+                return changes > 0;
             }
         }
 
-        public TEntity Get(Expression<Func<TEntity, bool>> filter = null)
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter = null)
         {
             using (var context = new TContext())
             {
-                return context.Set<TEntity>().SingleOrDefault(filter);
+                return await context.Set<TEntity>().SingleOrDefaultAsync(filter);
             }
         }
 
-        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
+        public async Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> filter = null)
         {
             using (var context = new TContext())
             {
                 return filter == null
-                ? context.Set<TEntity>().ToList()
-                : context.Set<TEntity>().Where(filter).ToList();
+                ? await context.Set<TEntity>().ToListAsync()
+                : await context.Set<TEntity>().Where(filter).ToListAsync();
             }
         }
 
-        public void Update(TEntity Entity)
+        public async Task<List<TEntity>> GetListAsync(int take, int skip, Expression<Func<TEntity, bool>> filter = null)
+        {
+            using (var context = new TContext())
+            {
+                return filter == null
+                ? await context.Set<TEntity>().Skip(skip).Take(take).ToListAsync()
+                : await context.Set<TEntity>().Where(filter).Skip(skip).Take(take).ToListAsync();
+            }
+        }
+
+        public async Task<bool> UpdateAsync(TEntity Entity)
         {
             using (var context = new TContext())
             {
                 var updatedEntity = context.Entry(Entity);
                 updatedEntity.State = EntityState.Modified;
-                context.SaveChanges();
+                var changes = await context.SaveChangesAsync();
+                return changes > 0;
+            }
+        }
+
+        public async Task<int> GetRowCountAsync()
+        {
+            using (var context = new TContext())
+            {
+                return await context.Set<TEntity>().CountAsync();
             }
         }
     }

@@ -3,9 +3,9 @@ using WEBP.Entities.Database;
 
 namespace WEBP.DAL
 {
-    public class MineDbContext:DbContext
+    public class MineDbContext : DbContext
     {
-        
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql("server=localhost;user id=root;password=Fatih.ersy97;database=minedb;persistsecurityinfo=True");

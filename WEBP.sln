@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WEBP.DAL", "WEBP.DAL\WEBP.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WEBP.Entities", "WEBP.Entities\WEBP.Entities.csproj", "{47543ABC-81FB-4AE7-AD82-70D5BF62433E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEBP.WebAPI", "WEBP.WebAPI\WEBP.WebAPI.csproj", "{01641992-AB0C-405D-9755-E5D2CA458637}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WEBP.WebAPI", "WEBP.WebAPI\WEBP.WebAPI.csproj", "{01641992-AB0C-405D-9755-E5D2CA458637}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEBP.Web", "WEBP.Web\WEBP.Web.csproj", "{6CF6F186-871F-43E2-8570-F2BF13EFC80B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{01641992-AB0C-405D-9755-E5D2CA458637}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01641992-AB0C-405D-9755-E5D2CA458637}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01641992-AB0C-405D-9755-E5D2CA458637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CF6F186-871F-43E2-8570-F2BF13EFC80B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF6F186-871F-43E2-8570-F2BF13EFC80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CF6F186-871F-43E2-8570-F2BF13EFC80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CF6F186-871F-43E2-8570-F2BF13EFC80B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

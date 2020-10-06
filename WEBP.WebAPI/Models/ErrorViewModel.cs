@@ -1,5 +1,3 @@
-using System;
-
 namespace WEBP.WebAPI.Models
 {
     public class ErrorViewModel
