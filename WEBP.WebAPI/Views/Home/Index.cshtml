@@ -6,11 +6,11 @@
 }
 
 <div class="content-header-div">
-	<img class="content-header" src="../Resources/b.jpeg" />
+	<img class="content-header" src="Resources/b.jpeg"  alt=""/>
 </div>
 <div class="posts">
 
-		@foreach (var item in Model.blogs)
+		@foreach (var item in Model.Blogs)
 		{
 			<div class="post" onclick="goToBlog('@item.uniqueid');" @item.category>
 				<div class="post-img"></div>
@@ -27,7 +27,7 @@
 				<a href="/?page=1">First</a>
 			</li>
 
-			@for (int i = 1; i <= ViewBag.ipages; i++)
+			@for (var i = 1; i <= ViewBag.ipages; i++)
 			{
 				if (i == ViewBag.page)
 				{

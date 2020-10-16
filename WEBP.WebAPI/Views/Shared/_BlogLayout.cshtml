@@ -23,11 +23,11 @@
 						<a class="nav-item-link" asp-area="" asp-controller=@item.controller asp-action="@item.action">@item.name</a>
 					</div>
 				}
-
+				@*
 				<div class="nav-item right">
 					<a class="nav-item-link" asp-area="" asp-controller="Iletisim" asp-action="Index">Iletisim</a>
 				</div>
-
+				*@
 			</div>
 		</div>
 	</div>
@@ -45,6 +45,6 @@
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
 	<script src="~/js/blog.js" asp-append-version="true"></script>
-	@RenderSection("Scripts", required: false)
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

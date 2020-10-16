@@ -30,7 +30,7 @@ $(function () {
 
 function goToBlog(id) {
     window.location.href = "/blog?id=" + id;
-};
+}
 
 $( $( classes.DSIDEPANELITEM )[ sidepanelButtonNums.INCELEME ]) .click(function ()
 {

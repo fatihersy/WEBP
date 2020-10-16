@@ -28,14 +28,14 @@ namespace WEBP.WebAPI.Controllers
             ViewBag.page = page;
             ViewBag.ipages =
                 Math.Ceiling(
-                    (float)(await _blogManager.GetRowCountAsync()) / (float)12
+                    await _blogManager.GetRowCountAsync() / (float)12
                 );
 
             if (blogs.Count != 0)
             {
                 return View(new MuzikViewModel
                 {
-                    blogs = blogs
+                    Blogs = blogs
                 });
             }
 

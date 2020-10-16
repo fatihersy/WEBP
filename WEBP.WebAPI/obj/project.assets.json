@@ -337,6 +337,22 @@
         "runtime": {
           "bin/placeholder/WEBP.Entities.dll": {}
         }
+      },
+      "WEBP.Web/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "WEBP.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WEBP.Web.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WEBP.Web.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -931,6 +947,11 @@
       "type": "project",
       "path": "../WEBP.Entities/WEBP.Entities.csproj",
       "msbuildProject": "../WEBP.Entities/WEBP.Entities.csproj"
+    },
+    "WEBP.Web/1.0.0": {
+      "type": "project",
+      "path": "../WEBP.Web/WEBP.Web.csproj",
+      "msbuildProject": "../WEBP.Web/WEBP.Web.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -938,7 +959,8 @@
       "WEBP.BLL >= 1.0.0",
       "WEBP.Core >= 1.0.0",
       "WEBP.DAL >= 1.0.0",
-      "WEBP.Entities >= 1.0.0"
+      "WEBP.Entities >= 1.0.0",
+      "WEBP.Web >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -947,11 +969,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.WebAPI\\WEBP.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.WebAPI\\WEBP.WebAPI.csproj",
       "projectName": "WEBP.WebAPI",
-      "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.WebAPI\\WEBP.WebAPI.csproj",
+      "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.WebAPI\\WEBP.WebAPI.csproj",
       "packagesPath": "C:\\Users\\supre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\supre\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -967,17 +989,20 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj": {
-              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj"
+            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj": {
+              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj"
             },
-            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
-              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj"
+            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
+              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj"
             },
-            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj": {
-              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj"
+            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj": {
+              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj"
             },
-            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {
-              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj"
+            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {
+              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj"
+            },
+            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Web\\WEBP.Web.csproj": {
+              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Web\\WEBP.Web.csproj"
             }
           }
         }

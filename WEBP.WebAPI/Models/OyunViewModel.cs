@@ -5,6 +5,6 @@ namespace WEBP.WebAPI.Models
 {
     public class OyunViewModel
     {
-        public List<UiBlog> blogs { get; set; }
+        public List<UiBlog> Blogs { get; set; }
     }
 }

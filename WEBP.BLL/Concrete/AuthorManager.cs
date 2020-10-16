@@ -9,7 +9,7 @@ namespace WEBP.BLL.Concrete
 {
     public class AuthorManager : IAuthorService
     {
-        private IAuthorDal _authorDal;
+        private readonly IAuthorDal _authorDal;
 
         public AuthorManager(IAuthorDal authorDal)
         {

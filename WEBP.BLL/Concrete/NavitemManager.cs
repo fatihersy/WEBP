@@ -10,7 +10,7 @@ namespace WEBP.BLL.Concrete
 {
     public class NavitemManager : INavitemService
     {
-        private INavitemDal _navitemDal;
+        private readonly INavitemDal _navitemDal;
         public NavitemManager(INavitemDal navitemDal)
         {
             _navitemDal = navitemDal;

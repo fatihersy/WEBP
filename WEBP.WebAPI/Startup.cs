@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WEBP.BLL.Abstract;
@@ -12,13 +11,7 @@ namespace WEBP.WebAPI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
-        public IConfiguration Configuration { get; }
-
+        
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -34,19 +27,22 @@ namespace WEBP.WebAPI
             services.AddTransient<ICategoryService, CategoryManager>();
             services.AddTransient<INavitemDal, EfNavitemDal>();
             services.AddTransient<INavitemService, NavitemManager>();
+            services.AddTransient<ILoginDal, EfLoginDal>();
+            services.AddTransient<ILoginService, LoginManager>();
+            services.AddTransient<IUserDal, EfUserDal>();
+            services.AddTransient<IMembershipsDal, EfMembershipsDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            {  
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
@@ -62,6 +58,10 @@ namespace WEBP.WebAPI
                     name: "default",
                     pattern: "{controller=home}/{action=Index}/{page?}"
                     );
+                endpoints.MapControllerRoute(
+                    name: "secondary",
+                    pattern: "{controller=home}/{action}"
+                );
                 endpoints.MapControllerRoute(
                     name: "secondary",
                     pattern: "{controller}/{action=Index}/{page?}"

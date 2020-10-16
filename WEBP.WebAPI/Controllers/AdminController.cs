@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -8,8 +7,6 @@ using WEBP.DAL.Interfaces;
 using WEBP.Entities.UI;
 using WEBP.Entities.Database;
 using WEBP.WebAPI.Models;
-using System.Reflection;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace WEBP.WebAPI.Controllers
 {
@@ -19,7 +16,7 @@ namespace WEBP.WebAPI.Controllers
         private readonly CategoryManager _categoryManager;
         private readonly AuthorManager _authorManager;
 
-        public AdminController(IBlogDal blogsDal, ICategoryDal categoryDal, IAuthorDal authorDal, INavitemDal navitemDal)
+        public AdminController(IBlogDal blogsDal, ICategoryDal categoryDal, IAuthorDal authorDal)
         {
             _blogManager = new BlogManager(blogsDal, null, null);
             _categoryManager = new CategoryManager(categoryDal);
@@ -31,7 +28,7 @@ namespace WEBP.WebAPI.Controllers
         {
             return View(new CreatePanelViewModel 
             {
-                categories = (await _categoryManager.GetAllAsync()).Select(k => k.name).ToList()
+                Categories = (await _categoryManager.GetAllAsync()).Select(k => k.name).ToList()
             });
         }
 
@@ -43,17 +40,19 @@ namespace WEBP.WebAPI.Controllers
             {
                 return View(new CreatePanelViewModel
                 {
-                    categories = (await _categoryManager.GetAllAsync()).Select(k => k.name).ToList()
+                    Categories = (await _categoryManager.GetAllAsync()).Select(k => k.name).ToList()
                 });
             }
 
-            if ( await _blogManager.AddAsync(new Blog
+            var instance = new Blog
             {
                 title = blog.title,
                 authorId = 1,
-                categoryid = ( await _categoryManager.GetByNameAsync(blog.category) ).id,
+                categoryid = (await _categoryManager.GetByNameAsync(blog.category)).id,
                 uniqueid = Guid.NewGuid()
-            }))
+            };
+            
+            if ( await _blogManager.AddAsync(instance))
                 return View();
             else
                 return BadRequest();
@@ -65,9 +64,9 @@ namespace WEBP.WebAPI.Controllers
         {
             return View(new ListPanelViewModel
             {
-                blogs = await _blogManager.GetAllWithIdAsync(),
-                categories = await _categoryManager.GetAllWithIdAsync(),
-                authors = await _authorManager.GetAllWithIdAsync()
+                Blogs = await _blogManager.GetAllWithIdAsync(),
+                Categories = await _categoryManager.GetAllWithIdAsync(),
+                Authors = await _authorManager.GetAllWithIdAsync()
             });
         }
 
@@ -75,7 +74,7 @@ namespace WEBP.WebAPI.Controllers
         {
             var blogs = await _blogManager.GetAllAsync();
 
-            if( blogs.Count() > 0 )
+            if( blogs.Any() )
             {
                 return View();
             }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using WEBP.BLL.Abstract;
 using WEBP.DAL.Interfaces;
@@ -10,9 +11,9 @@ namespace WEBP.BLL.Concrete
 {
     public class BlogManager : IBlogService
     {
-        private IBlogDal _blogDal;
-        private ICategoryDal _categoryDal;
-        private IAuthorDal _authorDal;
+        private readonly IBlogDal _blogDal;
+        private readonly ICategoryDal _categoryDal;
+        private readonly IAuthorDal _authorDal;
         public BlogManager(IBlogDal blogsDal, ICategoryDal categoryDal, IAuthorDal authorDal)
         {
             _blogDal = blogsDal;
@@ -22,53 +23,39 @@ namespace WEBP.BLL.Concrete
 
         public async Task<List<UiBlog>> GetAllAsync(int page, int pageSize)
         {
-            if (page < 1) page = 0;
-            else page--;
-            page = page * pageSize;
+            if (page < 1) page = 1;
+            page--;
+            page *= pageSize;
 
-            List<Blog> blogs = await _blogDal.GetListAsync(pageSize, page);
-            List<Category> categories = await _categoryDal.GetListAsync();
-            List<UiBlog> uiBlogs = new List<UiBlog>();
+            var blogs = await _blogDal.GetListAsync(pageSize, page);
+            var categories = await _categoryDal.GetListAsync();
 
-            foreach (var item in blogs)
-            {
-                UiBlog uiBlog = new UiBlog
+            return blogs.Select(item => 
+                new UiBlog
                 {
-                    title = item.title,
-                    category = categories.Find(c => c.id == item.categoryid).name,
+                    title = item.title, 
+                    category = categories.Find(c => c.id == item.categoryid)?.name, 
                     uniqueid = item.uniqueid
-                };
-
-                uiBlogs.Add(uiBlog);
-            }
-
-            return uiBlogs;
+                }).ToList();
         }
 
         public async Task<List<UiBlog>> GetAllAsync()
         {
-            List<Blog> blogs = await _blogDal.GetListAsync();
-            List<Category> categories = await _categoryDal.GetListAsync();
-            List<UiBlog> uiBlogs = new List<UiBlog>();
+            var blogs = await _blogDal.GetListAsync();
+            var categories = await _categoryDal.GetListAsync();
 
-            foreach (var item in blogs)
-            {
-                UiBlog uiBlog = new UiBlog
+            return blogs.Select(item => 
+                new UiBlog
                 {
-                    title = item.title,
-                    category = categories.Find(c => c.id == item.categoryid).name,
+                    title = item.title, 
+                    category = categories.Find(c => c.id == item.categoryid)?.name,
                     uniqueid = item.uniqueid
-                };
-
-                uiBlogs.Add(uiBlog);
-            }
-
-            return uiBlogs;
+                }).ToList();
         }
 
         public async Task<UiBlog> GetByIdAsync(Guid blogId)
         {
-            Blog blog = await _blogDal.GetAsync(a => a.uniqueid == blogId);
+            var blog = await _blogDal.GetAsync(a => a.uniqueid == blogId);
 
             return new UiBlog
             {

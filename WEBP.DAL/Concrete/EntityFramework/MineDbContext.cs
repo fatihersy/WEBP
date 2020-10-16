@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WEBP.Entities.Database;
 
-namespace WEBP.DAL
+namespace WEBP.DAL.Concrete.EntityFramework
 {
     public class MineDbContext : DbContext
     {
@@ -22,5 +22,12 @@ namespace WEBP.DAL
         public DbSet<Category> Category { get; set; }
 
         public DbSet<Navitem> Navitem { get; set; }
+
+        public DbSet<User> User { get; set; }
+
+        public DbSet<Login> Login { get; set; }
+
+        public DbSet<Memberships> Memberships { get; set; }
+
     }
 }

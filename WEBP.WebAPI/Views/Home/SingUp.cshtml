@@ -1,0 +1,87 @@
+﻿@model WEBP.WebAPI.Models.SingUpViewModel
+
+@{ 
+    Layout = "~/Views/Shared/_LogingLayout.cshtml";
+    ViewData["Title"] = "SingUp";
+}
+
+<div class="panel">
+
+
+    @using (Html.BeginForm("SingUp", "Home", FormMethod.Post, new { enctype = "multipart/form-data", autocomplete="off" }))
+    {
+        <form>
+            @Html.AntiForgeryToken()
+
+            <div class="mb-3">
+                <div class="input-group is-invalid">
+                    <div class="input-group-prepend">
+                        @Html.LabelFor(m => m.User.FirstName, new { @class = "input-group-text" })
+                    </div>
+                    @Html.TextBoxFor(m => m.User.FirstName, new { @class = "form-control" })
+                </div>
+                <small> @Html.ValidationMessageFor(m => m.User.FirstName, "", new { @class = "text-danger" }) </small>
+            </div>
+
+            <div class="mb-3">
+                <div class="input-group is-invalid">
+                    <div class="input-group-prepend">
+                        @Html.LabelFor(m => m.User.LastName, new { @class = "input-group-text" })
+                    </div>
+                    @Html.TextBoxFor(m => m.User.LastName, new { @class = "form-control" })
+                </div>
+                <small> @Html.ValidationMessageFor(m => m.User.LastName, "", new { @class = "text-danger" }) </small>
+            </div>
+            
+            <div class="mb-3">
+                <div class="input-group is-invalid">
+                    <div class="input-group-prepend">
+                        @Html.LabelFor(m => m.Login.UserName, new { @class = "input-group-text" })
+                    </div>
+                    @Html.TextBoxFor(m => m.Login.UserName, new { @class = "form-control" })
+                </div>
+                <small> @Html.ValidationMessageFor(m => m.Login.UserName, "", new { @class = "text-danger" }) </small>
+            </div>
+
+            <div class="mb-3">
+                <div class="input-group is-invalid">
+                    <div class="input-group-prepend">
+                        @Html.LabelFor(m => m.Login.Password, new { @class = "input-group-text" })
+                    </div>
+                    @Html.PasswordFor(m => m.Login.Password, new { id="Password", TextMode="Password",  @class = "form-control" })
+                </div>
+                <small> @Html.ValidationMessageFor(m => m.Login.Password, "", new { @class = "text-danger" }) </small>
+            </div>
+            
+            <div class="mb-3">
+                <div class="input-group is-invalid">
+                    <div class="input-group-prepend">
+                        @Html.LabelFor(m => m.Membership.EMail, new { @class = "input-group-text" })
+                    </div>
+                    @Html.TextBoxFor(m => m.Membership.EMail, new { @class = "form-control" })
+                </div>
+                <small> @Html.ValidationMessageFor(m => m.Membership.EMail, "", new { @class = "text-danger" }) </small>
+            </div>
+
+            <div class="mb-3">
+                <div class="input-group is-invalid">
+                    <div class="input-group-prepend">
+                        @Html.LabelFor(m => m.Membership.PhoneNumber, new { @class = "input-group-text" })
+                    </div>
+                    @Html.TextBoxFor(m => m.Membership.PhoneNumber, new { @class = "form-control" })
+                </div>
+                <small> @Html.ValidationMessageFor(m => m.Membership.PhoneNumber, "", new { @class = "text-danger" }) </small>
+            </div>
+            
+            
+            
+            
+            <div>
+                <input type="submit" value="Kayıt Ol" class="btn btn-primary" />
+            </div>
+
+        </form>
+    }
+
+
+</div>

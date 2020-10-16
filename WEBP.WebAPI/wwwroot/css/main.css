@@ -13,7 +13,6 @@
     --nav-text-hover-color-: var(--nav-bg-color);
     --nav-text-bg-color: var(--nav-text-color);
     --nav-height-px: 2.5rem;
-    --nav-text-color: var(--white);
     --nav-bg-color: var(--black);
     --sidepanel-bg-color: var(--white);
     --sidebar-width: 3rem;
@@ -81,7 +80,6 @@ body {
 .nav-item-link:hover 
 {
     background-color: var(--nav-text-bg-color);
-    color: var(--nav-text-hover-color);
     text-decoration:none;
 }
 

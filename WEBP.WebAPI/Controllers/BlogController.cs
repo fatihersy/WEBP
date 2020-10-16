@@ -25,7 +25,7 @@ namespace WEBP.WebAPI.Controllers
 
             return View(new BlogViewModel
             {
-                blog = await _blogManager.GetByIdAsync(id)
+                Blog = await _blogManager.GetByIdAsync(id)
             });
         }
     }

@@ -5,10 +5,10 @@ namespace WEBP.WebAPI.Models
 {
     public class ListPanelViewModel
     {
-        public List<Blog> blogs { get; set; }
+        public List<Blog> Blogs { get; set; }
 
-        public List<Category> categories { get; set; }
+        public List<Category> Categories { get; set; }
 
-        public List<Author> authors { get; set; }
+        public List<Author> Authors { get; set; }
     }
 }

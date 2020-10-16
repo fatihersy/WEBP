@@ -14,11 +14,11 @@ namespace WEBP.Core
 
         Task<List<T>> GetListAsync(int take, int skip, Expression<Func<T, bool>> filter = null);
 
-        Task<bool> AddAsync(T Entity);
+        Task<bool> AddAsync(T entity);
 
-        Task<bool> UpdateAsync(T Entity);
+        Task<bool> UpdateAsync(T entity);
 
-        Task<bool> DeleteAsync(T Entity);
+        Task<bool> DeleteAsync(T entity);
 
         Task<int> GetRowCountAsync();
     }

@@ -9,7 +9,7 @@ namespace WEBP.BLL.Concrete
 {
     public class TagManager : ITagService
     {
-        private ITagDal _tagDal;
+        private readonly ITagDal _tagDal;
 
         public TagManager(ITagDal tagsDal)
         {

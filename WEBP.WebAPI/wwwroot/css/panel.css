@@ -74,9 +74,9 @@ input
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 0px 1rem 1rem 1px rgba(0,0,0,0.05);
+	box-shadow: 0 1rem 1rem 1px rgba(0,0,0,0.05);
 	background-color: #5cffc7db;
-	margin: .4rem 0rem;
+	margin: .4rem 0;
 }
 	#sidepanel * {
 		align-items: center;
@@ -110,7 +110,6 @@ input
 }
 .side-item-link:hover {
 	background-color: var(--side-text-bg-color);
-	color: var(--side-text-hover-color);
 	text-decoration: none;
 }
 

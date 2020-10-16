@@ -4,6 +4,6 @@ namespace WEBP.WebAPI.Models
 {
     public class BlogViewModel
     {
-        public UiBlog blog { get; set; }
+        public UiBlog Blog { get; set; }
     }
 }

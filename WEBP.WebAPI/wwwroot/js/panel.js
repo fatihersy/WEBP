@@ -1,19 +1,21 @@
 ﻿
 
 $("#input-title").keypress(function (event) {
-    if (event.which == 13)
+    let iTitle = $("#input-title");
+    
+    if (event.which === 13)
     {
         $(".blog-table .blog-title").each(function ()
         {
-            if ( $("#input-title").val() == "" )
+            if ( iTitle.val() === "" )
             {
                 $(this).parent().show();
             }
-            else if ($("#input-title").val() == $(this).text() && $(this).is(":visible"))
+            else if (iTitle.val() === $(this).text() && $(this).is(":visible"))
             {
                 $(this).parent().show();
             }
-            else if ( $("#input-title").val() != $(this).text() )
+            else if ( iTitle.val() !== $(this).text() )
             {
                 $(this).parent().hide();
             }
@@ -23,19 +25,21 @@ $("#input-title").keypress(function (event) {
 
 $("#input-author").keypress(function (event)
 {
-    if (event.which == 13)
+    let iAuthor = $("#input-author");
+    
+    if (event.which === 13)
     {
         $(".blog-table .blog-author").each(function ()
         {
-            if ($("#input-author").val() == "")
+            if (iAuthor.val() === "")
             {
                 $(this).parent().show();
             }
-            else if ($("#input-author").val() == $(this).text() && $(this).is(":visible"))
+            else if (iAuthor.val() === $(this).text() && $(this).is(":visible"))
             {
                 $(this).parent().show();
             }
-            else if ($("#input-author").val() != $(this).text())
+            else if (iAuthor.val() !== $(this).text())
             {
                 $(this).parent().hide();
             }
@@ -45,17 +49,19 @@ $("#input-author").keypress(function (event)
 
 $("#input-category").keypress(function (event)
 {
-    if (event.which == 13)
+    let iCategory = $("#input-category");
+    
+    if (event.which === 13)
     {
         $(".blog-table .blog-category").each(function ()
         {
-            if ($("#input-category").val() == "") {
+            if (iCategory.val() === "") {
                 $(this).parent().show();
             }
-            else if ($("#input-category").val() == $(this).text() && $(this).is(":visible")) {
+            else if (iCategory.val() === $(this).text() && $(this).is(":visible")) {
                 $(this).parent().show();
             }
-            else if ($("#input-category").val() != $(this).text()) {
+            else if (iCategory.val() !== $(this).text()) {
                 $(this).parent().hide();
             }
         });
@@ -64,19 +70,21 @@ $("#input-category").keypress(function (event)
 
 $("#input-aktifMi").keypress(function (event)
 {
-    if (event.which == 13)
+    let iActive = $("#input-category");
+    
+    if (event.which === 13)
     {
         $(".blog-table .blog-aktifMi").each(function ()
         {
-            if ($("#input-aktifMi").val() == "")
+            if (iActive.val() === "")
             {
                 $(this).parent().show();
             }
-            else if ($("#input-aktifMi").val() == $(this).text() && $(this).is(":visible"))
+            else if (iActive.val() === $(this).text() && $(this).is(":visible"))
             {
                 $(this).parent().show();
             }
-            else if ($("#input-aktifMi").val() != $(this).text())
+            else if (iActive.val() !== $(this).text())
             {
                 $(this).parent().hide();
             }
@@ -84,18 +92,21 @@ $("#input-aktifMi").keypress(function (event)
     }
 });
 
-$("#input-uniqueId").keypress(function (event) {
-    if (event.which == 13)
+$("#input-uniqueId").keypress(function (event) 
+{
+    let iUniqueId = $("#input-category");
+    
+    if (event.which === 13)
     {
         $(".blog-table .blog-uniqueId").each(function ()
         {
-            if ($("#input-uniqueId").val() == "") {
+            if (iUniqueId.val() === "") {
                 $(this).parent().show();
             }
-            else if ($("#input-uniqueId").val() == $(this).text() && $(this).is(":visible")) {
+            else if (iUniqueId.val() === $(this).text() && $(this).is(":visible")) {
                 $(this).parent().show();
             }
-            else if ($("#input-uniqueId").val() != $(this).text()) {
+            else if (iUniqueId.val() !== $(this).text()) {
                 $(this).parent().hide();
             }
         });
