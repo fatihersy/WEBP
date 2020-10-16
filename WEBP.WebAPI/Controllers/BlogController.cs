@@ -21,7 +21,7 @@ namespace WEBP.WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> Index(Guid id)
         {
-            ViewBag.navitems = _navitemManager.GetAllAsync();
+            ViewBag.navitems = await _navitemManager.GetAllAsync();
 
             return View(new BlogViewModel
             {

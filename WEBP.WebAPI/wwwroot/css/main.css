@@ -14,11 +14,15 @@
     --nav-text-bg-color: var(--nav-text-color);
     --nav-height-px: 2.5rem;
     --nav-bg-color: var(--black);
+    /*
     --sidepanel-bg-color: var(--white);
     --sidebar-width: 3rem;
+    */
     --font-navbar: 'Lobster Two', cursive;
     --font-container: 'Merriweather', serif;
 }
+
+a { color: inherit; }
 
 * {
     margin: 0;

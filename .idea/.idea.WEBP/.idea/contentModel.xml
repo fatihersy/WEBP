@@ -259,6 +259,10 @@
             </e>
           </e>
           <e p="Resources" t="Include">
+            <e p="1.jpg" t="Include" />
+            <e p="2.jpg" t="Include" />
+            <e p="3.jpg" t="Include" />
+            <e p="4.jpg" t="Include" />
             <e p="a.jpeg" t="Include" />
             <e p="b.jpeg" t="Include" />
           </e>

@@ -34,7 +34,8 @@
 		</div>
 	</div>
 
-	<div id="sidepanel">
+@*
+<div id="sidepanel">
 		<div class="sidepanel-item-div">
 			<div class="sidepanel-item" data-toggle data-placement="right" title="INCELEME">
 				<i  class="fas fa-smile"></i>
@@ -49,6 +50,7 @@
 			</div>
 		</div>
 	</div>
+*@
 
 	<div id="content-frame">
 		<div id="content-div">
@@ -59,10 +61,8 @@
 		</div>
 	</div>
 
-
-	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-	<script src="~/js/page.js" asp-append-version="true"></script>
 	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

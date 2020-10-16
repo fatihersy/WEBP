@@ -28,10 +28,7 @@ $(function () {
     $('[data-toggle]').tooltip();
 });
 
-function goToBlog(id) {
-    window.location.href = "/blog?id=" + id;
-}
-
+/*
 $( $( classes.DSIDEPANELITEM )[ sidepanelButtonNums.INCELEME ]) .click(function ()
 {
     if ( !$($(classes.DSIDEPANELITEM)[sidepanelButtonNums.INCELEME]).hasClass(classes.SIDEPANELACTIVEITEM) )
@@ -124,7 +121,7 @@ $($(classes.DSIDEPANELITEM)[sidepanelButtonNums.ESPOR]).click(function ()
     }
     $(this).toggleClass(classes.SIDEPANELACTIVEITEM);
 });
-
+*/
 
 /*
 function toggleSidepanelWidth() {
