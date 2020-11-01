@@ -13,4 +13,9 @@
     <ProjectReference Include="..\WEBP.Web\WEBP.Web.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Muzik\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Oyun\Index.cshtml" />
+  </ItemGroup>
+
 </Project>

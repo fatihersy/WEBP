@@ -3,26 +3,19 @@
   <component name="ContentModelStore">
     <e p="C:\Users\supre\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\supre\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_WEBP.1175516823.00" t="ExcludeRecursive" />
-    <e p="C:\Users\supre\AppData\Roaming\JetBrains\Rider2020.2\javascript\extLibs\http_kit.fontawesome.com_d4b0984dff.js" t="IncludeRecursive" />
+    <e p="C:\Users\supre\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\supre\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
     <e p="C:\Users\supre\source\repos\fatihersy\WEBP" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="WEBP.BLL" t="IncludeRecursive">
         <e p="Abstract" t="Include">
-          <e p="IAuthorService.cs" t="Include" />
-          <e p="IBlogService.cs" t="Include" />
-          <e p="ICategoryService.cs" t="Include" />
           <e p="ILoginService.cs" t="Include" />
-          <e p="INavitemService.cs" t="Include" />
-          <e p="ITagService.cs" t="Include" />
+          <e p="IProductService.cs" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Concrete" t="Include">
-          <e p="AuthorManager.cs" t="Include" />
-          <e p="BlogManager.cs" t="Include" />
-          <e p="CategoryManager.cs" t="Include" />
           <e p="LoginManager.cs" t="Include" />
-          <e p="NavitemManager.cs" t="Include" />
-          <e p="TagManager.cs" t="Include" />
+          <e p="ProductManager.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -58,27 +51,17 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Concrete" t="Include">
           <e p="EntityFramework" t="Include">
-            <e p="EfAuthorDal.cs" t="Include" />
-            <e p="EfBlogDal.cs" t="Include" />
-            <e p="EfBlogtagDal.cs" t="Include" />
-            <e p="EfCategoryDal.cs" t="Include" />
             <e p="EfLoginDal.cs" t="Include" />
             <e p="EfMembershipsDal.cs" t="Include" />
-            <e p="EfNavitemDal.cs" t="Include" />
-            <e p="EfTagDal.cs" t="Include" />
+            <e p="EfProductDal.cs" t="Include" />
             <e p="EfUserDal.cs" t="Include" />
             <e p="MineDbContext.cs" t="Include" />
           </e>
         </e>
         <e p="Interfaces" t="Include">
-          <e p="IAuthorDal.cs" t="Include" />
-          <e p="IBlogDal.cs" t="Include" />
-          <e p="IBlogtagDal.cs" t="Include" />
-          <e p="ICategoryDal.cs" t="Include" />
           <e p="ILoginDal.cs" t="Include" />
           <e p="IMembershipsDal.cs" t="Include" />
-          <e p="INavitemDal.cs" t="Include" />
-          <e p="ITagDal.cs" t="Include" />
+          <e p="IProductDal.cs" t="Include" />
           <e p="IUserDal.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -93,14 +76,9 @@
       <e p="WEBP.Entities" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Database" t="Include">
-          <e p="Author.cs" t="Include" />
-          <e p="Blog.cs" t="Include" />
-          <e p="Blogtag.cs" t="Include" />
-          <e p="Category.cs" t="Include" />
           <e p="Login.cs" t="Include" />
           <e p="Memberships.cs" t="Include" />
-          <e p="Navitem.cs" t="Include" />
-          <e p="Tag.cs" t="Include" />
+          <e p="Product.cs" t="Include" />
           <e p="User.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -111,13 +89,9 @@
           </e>
         </e>
         <e p="UI" t="Include">
-          <e p="UiAuthor.cs" t="Include" />
-          <e p="UiBlog.cs" t="Include" />
-          <e p="UiCategory.cs" t="Include" />
           <e p="UiLogin.cs" t="Include" />
           <e p="UiMemberships.cs" t="Include" />
-          <e p="UiNavitem.cs" t="Include" />
-          <e p="UiTag.cs" t="Include" />
+          <e p="UiProduct.cs" t="Include" />
           <e p="UiUser.cs" t="Include" />
         </e>
         <e p="WEBP.Entities.csproj" t="IncludeRecursive" />
@@ -129,20 +103,17 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="AdminController.cs" t="Include" />
-          <e p="BlogController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
-          <e p="MuzikController.cs" t="Include" />
-          <e p="OyunController.cs" t="Include" />
+          <e p="ProductController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
-          <e p="BlogViewModel.cs" t="Include" />
           <e p="CreatePanelViewModel.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="HomeViewModel.cs" t="Include" />
           <e p="ListPanelViewModel.cs" t="Include" />
           <e p="LogInViewModel.cs" t="Include" />
-          <e p="MuzikViewModel.cs" t="Include" />
-          <e p="OyunViewModel.cs" t="Include" />
+          <e p="ProductViewModel.cs" t="Include" />
+          <e p="SearchViewModel.cs" t="Include" />
           <e p="SingUpViewModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -162,12 +133,7 @@
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="Admin" t="Include">
             <e p="Create.cshtml" t="Include" />
-            <e p="Delete.cshtml" t="Include" />
             <e p="List.cshtml" t="Include" />
-            <e p="Update.cshtml" t="Include" />
-          </e>
-          <e p="Blog" t="Include">
-            <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Home" t="Include">
             <e p="Index.cshtml" t="Include" />
@@ -175,17 +141,14 @@
             <e p="Privacy.cshtml" t="Include" />
             <e p="SingUp.cshtml" t="Include" />
           </e>
-          <e p="Muzik" t="Include">
+          <e p="Product" t="Include">
             <e p="Index.cshtml" t="Include" />
-          </e>
-          <e p="Oyun" t="Include">
-            <e p="Index.cshtml" t="Include" />
+            <e p="Search.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
             <e p="_AdminPanelLayout.cshtml" t="Include" />
-            <e p="_BlogLayout.cshtml" t="Include" />
+            <e p="_HomeLayout.cshtml" t="Include" />
             <e p="_LogingLayout.cshtml" t="Include" />
-            <e p="_PageLayout.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />
           </e>
@@ -193,7 +156,7 @@
         <e p="WEBP.WebAPI.csproj" t="IncludeRecursive" />
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
-            <e p="blog.css" t="Include" />
+            <e p="home.css" t="Include" />
             <e p="loging.css" t="Include" />
             <e p="main.css" t="Include" />
             <e p="page.css" t="Include" />
@@ -265,6 +228,12 @@
             <e p="4.jpg" t="Include" />
             <e p="a.jpeg" t="Include" />
             <e p="b.jpeg" t="Include" />
+            <e p="nav-btn-1.jpg" t="Include" />
+            <e p="nav-btn-2.jpg" t="Include" />
+            <e p="nav-btn-3.jpg" t="Include" />
+            <e p="slide-1.jpg" t="Include" />
+            <e p="slide-2.jpg" t="Include" />
+            <e p="slide-3.jpg" t="Include" />
           </e>
         </e>
       </e>

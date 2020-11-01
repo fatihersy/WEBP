@@ -16,17 +16,7 @@ namespace WEBP.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddTransient<IBlogDal, EfBlogDal>();
-            services.AddTransient<ITagService, TagManager>();
-            services.AddTransient<ITagDal, EfTagDal>();
-            services.AddTransient<IAuthorService, AuthorManager>();
-            services.AddTransient<IAuthorDal, EfAuthorDal>();
-            services.AddTransient<IAuthorService, AuthorManager>();
-            services.AddTransient<IBlogtagDal, EfBlogtagDal>();
-            services.AddTransient<ICategoryDal, EfCategoryDal>();
-            services.AddTransient<ICategoryService, CategoryManager>();
-            services.AddTransient<INavitemDal, EfNavitemDal>();
-            services.AddTransient<INavitemService, NavitemManager>();
+            services.AddTransient<IProductDal, EfProductDal>();
             services.AddTransient<ILoginDal, EfLoginDal>();
             services.AddTransient<ILoginService, LoginManager>();
             services.AddTransient<IUserDal, EfUserDal>();

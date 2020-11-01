@@ -1,0 +1,40 @@
+﻿@model WEBP.WebAPI.Models.SearchViewModel
+
+@{
+	Layout = "~/Views/Shared/_HomeLayout.cshtml";
+	ViewData["Title"] = "Search Page";
+}
+
+<div class="posts">
+
+		@foreach (var item in Model.Products)
+		{
+			<a class="post" href="blog?id=@item.UniqueId" title="@item.Title">
+				<div class="post-img"></div>
+				<div class="post-info">
+					 <h6 class="post-title">@item.Title</h6>
+				</div>
+			</a>
+		}
+
+		<nav id="pagination-nav">
+			<ul class="pagination">
+				<li class="pg-link"> <a href="/?page=1">First</a> </li>
+				@for (var i = 1; i <= ViewBag.ipages; i++)
+				{
+					if (i == ViewBag.page)
+					{
+						<li class="pg-link active-link"> <a href="/?page=@i">@i</a> </li>
+					}
+					else
+					{
+						<li class="pg-link			 "> <a href="/?page=@i">@i</a> </li>
+					}
+				}
+				<li class="pg-link"> <a href="/?page=@ViewBag.ipages">Last</a> </li>
+			</ul>
+		</nav>
+
+		<script type="text/javascript"></script>
+		
+</div>

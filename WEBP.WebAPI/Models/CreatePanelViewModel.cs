@@ -5,8 +5,6 @@ namespace WEBP.WebAPI.Models
 {
     public class CreatePanelViewModel
     {
-        public UiBlog Blog { get; set; }
-
-        public List<string> Categories { get; set; }
+        public UiProduct Product { get; set; }
     }
 }

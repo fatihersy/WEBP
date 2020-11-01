@@ -20,14 +20,13 @@
 		</thead>
 
 		<tbody>
-			@foreach (var item in Model.Blogs)
+			@foreach (var item in Model.Products)
 			 {
 				<tr class="blog-table">
-					<td class="blog-title"    >@item.title</td>
-					<td class="blog-author"   >@Model.Authors.Find( a => a.id == item.authorId ).name</td>
-					<td class="blog-category" >@Model.Categories.Find(a => a.id == item.categoryid ).name</td>
-					<td class="blog-aktifMi"  >@item.aktifmi</td>
-					<td class="blog-uniqueId" >@item.uniqueid</td>
+					<td class="blog-title"    >@item.Title</td>
+					<td class="blog-user"     >@Model.Users.Find( a => a.Id == item.UserId ).FirstName</td>
+					<td class="blog-aktifMi"  >@item.AktifMi</td>
+					<td class="blog-uniqueId" >@item.UniqueId</td>
 				</tr>
 			 }
 		</tbody>         

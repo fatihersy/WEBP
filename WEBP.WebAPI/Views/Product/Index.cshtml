@@ -1,0 +1,27 @@
+﻿@model WEBP.WebAPI.Models.ProductViewModel
+
+@{
+	Layout = "~/Views/Shared/_HomeLayout.cshtml";
+	ViewData["Title"] = "Oyun Page";
+}
+
+<div class="content-header-div">
+
+	<img class="content-header" src="../Resources/b.jpeg" />
+
+	<h1 class="title">
+		@Model.Product.Title
+	</h1>
+
+</div>
+
+<div class="content-container">
+	<div class="text-container">
+
+
+		<p class="content">
+			@Model.Product.Description
+		</p>
+
+	</div>
+</div>

@@ -12,51 +12,38 @@ namespace WEBP.WebAPI.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly BlogManager _blogManager;
-        private readonly CategoryManager _categoryManager;
-        private readonly AuthorManager _authorManager;
-
-        public AdminController(IBlogDal blogsDal, ICategoryDal categoryDal, IAuthorDal authorDal)
+        private readonly ProductManager _productManager;
+        public AdminController(IProductDal productsDal)
         {
-            _blogManager = new BlogManager(blogsDal, null, null);
-            _categoryManager = new CategoryManager(categoryDal);
-            _authorManager = new AuthorManager(authorDal);
+            _productManager = new ProductManager(productsDal);
         }
 
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
-            return View(new CreatePanelViewModel 
-            {
-                Categories = (await _categoryManager.GetAllAsync()).Select(k => k.name).ToList()
-            });
+            return View(new CreatePanelViewModel());
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( UiBlog blog )
+        public async Task<IActionResult> Create( UiProduct blog )
         {
             if (!ModelState.IsValid)
             {
-                return View(new CreatePanelViewModel
-                {
-                    Categories = (await _categoryManager.GetAllAsync()).Select(k => k.name).ToList()
-                });
+                return View(new CreatePanelViewModel());
             }
 
-            var instance = new Blog
+            var instance = new Product
             {
-                title = blog.title,
-                authorId = 1,
-                categoryid = (await _categoryManager.GetByNameAsync(blog.category)).id,
-                uniqueid = Guid.NewGuid()
+                Title = blog.Title,
+                UserId = 1,
+                UniqueId = Guid.NewGuid()
             };
             
-            if ( await _blogManager.AddAsync(instance))
+            if ( await _productManager.AddAsync(instance))
                 return View();
             else
                 return BadRequest();
-
         }
 
         [HttpGet]
@@ -64,32 +51,9 @@ namespace WEBP.WebAPI.Controllers
         {
             return View(new ListPanelViewModel
             {
-                Blogs = await _blogManager.GetAllWithIdAsync(),
-                Categories = await _categoryManager.GetAllWithIdAsync(),
-                Authors = await _authorManager.GetAllWithIdAsync()
+                Products = await _productManager.GetAllWithIdAsync()
             });
         }
-
-        public async Task<IActionResult> Update()
-        {
-            var blogs = await _blogManager.GetAllAsync();
-
-            if( blogs.Any() )
-            {
-                return View();
-            }
-            else
-            {
-                return BadRequest();
-            }
-            
-        }
-
-        public IActionResult Delete()
-        {
-
-
-            return View();
-        }
+        
     }
 }

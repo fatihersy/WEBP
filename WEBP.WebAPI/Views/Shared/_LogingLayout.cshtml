@@ -17,12 +17,11 @@
 	<div class="nav-frame">
 		<div class="nav-div">
 			<div class="nav-item-list">
-				@foreach (var item in ViewBag.navitems)
-				{
-					<div class="nav-item">
-						<a class="nav-item-link" asp-area="" asp-controller=@item.controller asp-action="@item.action">@item.name</a>
-					</div>
-				}
+				
+				<div class="nav-item">
+					<a class="nav-item-link" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+				</div>
+
 			</div>
 		</div>
 	</div>

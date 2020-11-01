@@ -11,45 +11,39 @@ namespace WEBP.WebAPI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly BlogManager _blogManager;
-        private readonly NavitemManager _navitemManager;
+        private readonly ProductManager _productManager;
         private readonly LoginManager _logInManager;
 
-        public HomeController(IBlogDal blogsDal, ICategoryDal categoryDal, INavitemDal navitemDal, ILoginDal loginDal, IUserDal userDal, IMembershipsDal membershipsDal)
+        public HomeController(IProductDal productsDal, ILoginDal loginDal, IUserDal userDal, IMembershipsDal membershipsDal)
         {
-            _blogManager = new BlogManager(blogsDal, categoryDal, null);
-            _navitemManager = new NavitemManager(navitemDal);
+            _productManager = new ProductManager(productsDal);
             _logInManager = new LoginManager(loginDal, userDal, membershipsDal);
         }
 
         [HttpGet]
         public async Task<IActionResult> Index(int page)
         {
-            ViewBag.navitems = await _navitemManager.GetAllAsync();
+            var uruns = await _productManager.GetAllAsync(page, 12);
 
-            var blogs = await _blogManager.GetAllAsync(page, 12);
-
-            if (!blogs.Any()) return BadRequest();
+            if (!uruns.Any()) return BadRequest();
             
             ViewBag.page = page;
             ViewBag.ipages =
                 Math.Ceiling(
-                    await _blogManager.GetRowCountAsync()  / (float)12
+                    await _productManager.GetRowCountAsync()  / (float)12
                 );
             
             return View(new HomeViewModel
             {
-                Blogs = blogs
+                Products = uruns
             });
             
 
         }
 
         [HttpGet]
-        public async Task<IActionResult> LogIn()
+        public IActionResult LogIn()
         {
-            ViewBag.navitems = await _navitemManager.GetAllAsync();
-
             return View(new LogInViewModel());
         }
         
@@ -58,7 +52,6 @@ namespace WEBP.WebAPI.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.navitems = await _navitemManager.GetAllAsync();
                 return View(new LogInViewModel());
             }
 
@@ -68,10 +61,8 @@ namespace WEBP.WebAPI.Controllers
         }
         
         [HttpGet]
-        public async Task<IActionResult> SingUp()
+        public IActionResult SingUp()
         {
-            ViewBag.navitems = await _navitemManager.GetAllAsync();
-
             return View();
         }
         
@@ -81,14 +72,12 @@ namespace WEBP.WebAPI.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.navitems = await _navitemManager.GetAllAsync();
-                
                 return View();
             }
             
             var result = await _logInManager.SingUp( login, user, membership);
             
-            if (result) return await LogIn();
+            if (result) return LogIn();
             
             
             return BadRequest();

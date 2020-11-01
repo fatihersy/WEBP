@@ -16,26 +16,16 @@
 			<div class="mb-3">
 				<div class="input-group is-invalid">
 					<div class="input-group-prepend">
-						@Html.LabelFor(m => m.Blog.title, new { @class = "input-group-text" })
+						@Html.LabelFor(m => m.Product.Title, new { @class = "input-group-text" })
 					</div>
-					@Html.TextBoxFor(m => m.Blog.title, new { @class = "form-control" })
+					@Html.TextBoxFor(m => m.Product.Title, new { @class = "form-control" })
 				</div>
-				<small> @Html.ValidationMessageFor(m => m.Blog.title, "", new { @class = "text-danger" }) </small>
-			</div>
-
-			<div class="mb-3">
-				<div class="input-group is-invalid">
-					<div class="input-group-prepend">
-						@Html.LabelFor(m => m.Blog.category, new { @class = "input-group-text" })
-					</div>
-					@Html.DropDownListFor(m => m.Blog.category, new SelectList(Model.Categories), "...", new { @class = "custom-select" })
-				</div>
-				<small> @Html.ValidationMessageFor(m => m.Blog.category, "", new { @class = "text-danger" }) </small>
+				<small> @Html.ValidationMessageFor(m => m.Product.Title, "", new { @class = "text-danger" }) </small>
 			</div>
 
 			<div class="custom-control custom-checkbox mb-3">
-				@Html.CheckBoxFor(m => m.Blog.aktifmi, new { @class = "custom-control-input" })
-				@Html.LabelFor(m => m.Blog.aktifmi, new { @class = "custom-control-label" })
+				@Html.CheckBoxFor(m => m.Product.Aktifmi, new { @class = "custom-control-input" })
+				@Html.LabelFor(m => m.Product.Aktifmi, new { @class = "custom-control-label" })
 			</div>
 
 

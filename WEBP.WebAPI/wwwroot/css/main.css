@@ -10,7 +10,7 @@
     --post-img-w-s: 4.2rem;
     --post-img-h-s: 7rem;
     --nav-text-color: var(--white);
-    --nav-text-hover-color-: var(--nav-bg-color);
+    --nav-text-hover-color: var(--nav-bg-color);
     --nav-text-bg-color: var(--nav-text-color);
     --nav-height-px: 2.5rem;
     --nav-bg-color: var(--black);
@@ -84,6 +84,7 @@ body {
 .nav-item-link:hover 
 {
     background-color: var(--nav-text-bg-color);
+    color: var(--nav-text-color);
     text-decoration:none;
 }
 

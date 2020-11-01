@@ -5,7 +5,7 @@ namespace WEBP.WebAPI.Models
 {
     public class HomeViewModel
     {
-        public List<UiBlog> Blogs { get; set; }
+        public List<UiProduct> Products { get; set; }
 
     }
 }
