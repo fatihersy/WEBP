@@ -60,6 +60,7 @@ namespace WEBP.BLL.Concrete
         {
             var keys = q.Split("-");
             
+            //TODO Veritabanından veri çekmek için expression yazılacak
             var products = await _productDal.GetListAsync();
 
             return products.Select(p =>
