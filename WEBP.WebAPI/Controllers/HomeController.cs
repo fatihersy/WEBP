@@ -14,18 +14,20 @@ namespace WEBP.WebAPI.Controllers
         private readonly ProductManager _productManager;
         private readonly LoginManager _logInManager;
 
-        public HomeController(IProductDal productsDal, ILoginDal loginDal, IUserDal userDal, IMembershipsDal membershipsDal)
+        public HomeController(IProductDal productDal, ILoginDal loginDal, IUserDal userDal, IMembershipsDal membershipsDal)
         {
-            _productManager = new ProductManager(productsDal);
+            _productManager = new ProductManager(productDal, userDal);
             _logInManager = new LoginManager(loginDal, userDal, membershipsDal);
         }
 
         [HttpGet]
         public async Task<IActionResult> Index(int page)
         {
-            var uruns = await _productManager.GetAllAsync(page, 12);
+            //if (page < 1) await Index(1);
+            
+            var products = await _productManager.GetAllWithSizeAsync(page, 12);
 
-            if (!uruns.Any()) return BadRequest();
+            if (!products.Any()) return BadRequest();
             
             ViewBag.page = page;
             ViewBag.ipages =
@@ -35,7 +37,7 @@ namespace WEBP.WebAPI.Controllers
             
             return View(new HomeViewModel
             {
-                Products = uruns
+                Products = products
             });
             
 

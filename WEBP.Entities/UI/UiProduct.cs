@@ -7,15 +7,19 @@ namespace WEBP.Entities.UI
     {
         [Required( ErrorMessage = "Bu Alan Zorunludur")]
         [Display(Name = "Title")]
-        public string Title { get; set; }
-
-        public string Description { get; set; }
-
-        public Guid UniqueId { get; set; }
-
-        public string User { get; set; }
-
+        public string Title           { get; set; }
+           
+        public string Description     { get; set; }
+           
+        public float  Price           { get; set; }
+        
+        public float  DiscountedPrice { get; set; }
+        
+        public Guid   UniqueId        { get; set; }
+           
+        public string User            { get; set; }
+        
         [Display(Name = "Aktif Mi?")]
-        public bool Aktifmi { get; set; }
+        public bool   Aktifmi         { get; set; }
     }
 }

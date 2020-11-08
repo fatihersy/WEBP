@@ -5,13 +5,14 @@
     --active-text: #8395a7;
     --body-bg-color: var(--white);
     --container-text-color: var(--white);
-    --post-img-w: 23rem;
-    --post-img-h: 14rem;
+    --post-img-w: 20rem;
+    --post-img-h: 13rem;
     --post-img-w-s: 4.2rem;
     --post-img-h-s: 7rem;
     --nav-text-color: var(--white);
-    --nav-text-hover-color: var(--nav-bg-color);
     --nav-text-bg-color: var(--nav-text-color);
+    --nav-text-hover-color: var(--nav-bg-color);
+    --nav-text-hover-bg-color: var(--nav-text-color);
     --nav-height-px: 2.5rem;
     --nav-bg-color: var(--black);
     /*
@@ -22,7 +23,7 @@
     --font-container: 'Merriweather', serif;
 }
 
-a { color: inherit; }
+a { color: inherit; text-decoration: none !important; }
 
 * {
     margin: 0;
@@ -79,12 +80,12 @@ body {
     padding: .2rem .4rem .2rem .4rem;
     color: var(--nav-text-color);
     font-size: medium;
-    border-radius: .2rem .2rem .2rem .2rem;
+    border-radius: .2rem;
 }
 .nav-item-link:hover 
 {
-    background-color: var(--nav-text-bg-color);
-    color: var(--nav-text-color);
+    background-color: var(--nav-text-hover-bg-color);
+    color: var(--nav-text-hover-color);
     text-decoration:none;
 }
 

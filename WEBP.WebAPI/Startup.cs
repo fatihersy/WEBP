@@ -57,8 +57,8 @@ namespace WEBP.WebAPI
                     pattern: "{controller}/{action=Index}/{page?}"
                     );
                 endpoints.MapControllerRoute(
-                    name: "blog",
-                    pattern: "{controller=blog}/{action=Index}/{id}"
+                    name: "product",
+                    pattern: "{controller=product}/{action=Index}/{id}"
                     );
                 endpoints.MapControllerRoute(
                     name: "panel",

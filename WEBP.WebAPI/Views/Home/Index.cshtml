@@ -29,6 +29,7 @@
 		@using (Html.BeginForm("Search", "Product", FormMethod.Post, new { enctype = "multipart/form-data", autocomplete = "off", @class="searchForm" }))
 		{
 			<form>
+			@Html.AntiForgeryToken()
 				<div class="input-group">
 					<input name="q" id="q" type="text" class="form-control" placeholder="Bir Kelime Ara." autocomplete="off" autocorrect="off" tabindex="0" spellcheck="false">
 					<div class="input-group-append">
@@ -50,10 +51,30 @@
 
 		@foreach (var item in Model.Products)
 		{
-			<a class="post" href="blog?id=@item.UniqueId" title="@item.Title">
-				<div class="post-img"></div>
-				<div class="post-info">
-					 <h6 class="post-title">@item.Title</h6>
+			<a class="post" href="product?id=@item.UniqueId" title="@item.Title">
+				<div class="post-img" alt="incelemek İçin Tıkla"></div>
+				<div class="post-label">
+					<h6 class="post-title">@item.Title</h6>
+					
+					<div class="post-info">
+						<div class="post-info-left">
+							<span class="post-owner">@item.User</span>
+						</div>
+						<div class="post-info-right">
+							<div class="post-price">
+								@if (item.DiscountedPrice < item.Price)
+								{
+									<span class="product-price">@item.Price TL</span>
+									<span class="product-cost">@item.DiscountedPrice TL</span>
+								}
+								else
+								{
+									<span class="product-cost">@item.Price TL</span>
+								}
+							</div>
+						</div>
+					</div>
+					
 				</div>
 			</a>
 		}

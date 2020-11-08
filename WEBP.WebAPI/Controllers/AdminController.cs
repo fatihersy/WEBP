@@ -13,9 +13,9 @@ namespace WEBP.WebAPI.Controllers
     public class AdminController : Controller
     {
         private readonly ProductManager _productManager;
-        public AdminController(IProductDal productsDal)
+        public AdminController(IProductDal productDal, IUserDal userDal)
         {
-            _productManager = new ProductManager(productsDal);
+            _productManager = new ProductManager(productDal, userDal);
         }
 
         [HttpGet]

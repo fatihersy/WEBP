@@ -1,7 +1,9 @@
 ﻿
 :root {
 	--slider-width: 50rem;
-	--post-text-color: #8395a7;
+	--post-title-color: #8395a7;
+	--post-info-color: #4d5560;
+	--post-prd-price-color: #f53b57;
 }
 
 img {
@@ -44,43 +46,6 @@ img {
 	.post:hover {
 	}
 }
-
-
-/* NAVBAR */
-
-.nav-frame {
-	top: 0;
-	width: 100%;
-	height: var(--nav-height-px);
-	font-family: var(--font-navbar);
-	background-color: var(--nav-bg-color);
-	position: fixed;
-	z-index: 3;
-}
-.nav-div {
-	justify-content: center;
-}
-.nav-item-list {
-	display: flex;
-	justify-content: center;
-}
-.nav-item {
-	line-height: var(--nav-height-px);
-}
-.nav-item-link {
-	padding: .2rem .4rem;
-	color: var(--nav-text-color);
-	font-size: medium;
-	border-radius: .2rem;
-}
-	.nav-item-link:hover {
-		background-color: var(--nav-text-bg-color);
-		color: var(--nav-text-hover-color);
-		text-decoration: none;
-	}
-
-/* NAVBAR */
-
 
 /* SLIDER */
 
@@ -150,6 +115,7 @@ img {
 #content-frame {
 	margin-top: var( --nav-height-px );
 	font-family: var(--font-container);
+	min-height: 92vh;
 }
 #content-div {
 	text-align: center;
@@ -171,39 +137,64 @@ img {
 	margin-top: 1rem;
 }
 .post {
-	color: var(--post-text-color);
 	display: inline-block;
-	margin: .2rem;
+	margin: .3rem;
 	font-size: small;
 	transition: 0.1s linear;
-	padding: 1rem;
-	box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+	padding: .1rem;
+	/*box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);*/
 	border-radius: .25rem;
 }
+.post:hover {
+	transform: scale(0.98);
+}
+
 .post-img {
 	width: var(--post-img-w);
 	height: var(--post-img-h);
 	background-image: url(../Resources/b.jpeg);
 }
-.post:hover {
-	color: var(--post-text-color);
-	transform: scale(0.98);
-}
-.post-info {
-	height: 2.5rem;
+
+.post-label {
+	height: 4.5rem;
 	padding: .2rem;
 	background-color: transparent;
-	position: relative;
-	text-align: center;
+	text-align: left;
 }
 .post-title {
-	text-transform: uppercase;
-	position: absolute;
+	color: var(--post-title-color);
 }
-.post-description {
-	bottom: 0;
-	position: absolute;
+.post-info {
+	color: var(--post-title-color);
+	display: flex;
+	justify-content: space-between;
 }
+.post-info-right {
+	width: 25%;
+}
+.post-info-left {
+	width: 75%;
+}
+.post-owner {
+	color: var(--post-info-color);
+}
+.post-price {
+	text-align: right;
+}
+.post-price span{
+	display: block;
+	white-space: nowrap;
+}
+.product-price {
+	font-size: small;
+	color: var(--post-prd-price-color);
+	text-decoration: line-through;
+}
+.product-cost {
+	color: var(--post-info-color);
+	font-size: large;
+}
+
 
 /* POST */
 

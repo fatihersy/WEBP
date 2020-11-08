@@ -7,11 +7,11 @@ namespace WEBP.Entities.Database
     public class Login : IEntity
     {
         private static readonly CryptoServiceProvider HashService = new CryptoServiceProvider();
-        public string   PasswordHash    { get; set; }
-        public string   UserName        { get; set; }
-        public Guid     RelatedUniqueNo { get; set; }
+        private string   PasswordHash    { get; set; }
+        public  string   UserName        { get; set; }
+        public  Guid     RelatedUniqueNo { get; set; }
         
-        public int      Id              { get; set; }
+        public int      Id               { get; set; }
 
         public void SetPassword   (string password) => PasswordHash = HashService.CreateHash(password);
         public bool VerifyPassword(string password) => HashService.Verify(password, PasswordHash);

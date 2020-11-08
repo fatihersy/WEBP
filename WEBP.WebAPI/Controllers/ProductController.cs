@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using WEBP.BLL.Concrete;
 using WEBP.DAL.Interfaces;
@@ -11,9 +12,9 @@ namespace WEBP.WebAPI.Controllers
     {
         private readonly ProductManager _productManager;
 
-        public ProductController(IProductDal productsDal)
+        public ProductController(IProductDal productDal, IUserDal userDal)
         {
-            _productManager = new ProductManager(productsDal);
+            _productManager = new ProductManager(productDal, userDal);
         }
 
         [HttpGet]
@@ -26,12 +27,19 @@ namespace WEBP.WebAPI.Controllers
         }
         
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Search(string q)
         {
-            return View(new SearchViewModel
-            {
-                Products = await _productManager.GetByQueryAsync(q)
-            });
+            if (q == null) return RedirectToAction("Index", "Home");
+            
+            var products = await _productManager.GetByQueryAsync(q);
+            
+            if (products.Any())
+                return View(new SearchViewModel
+                {
+                    Products = products
+                });
+            else return BadRequest();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace WEBP.BLL.Abstract
     {
         Task<List<Product>> GetAllWithIdAsync();
 
-        Task<List<UiProduct>> GetAllAsync(int skip, int take);
+        Task<List<UiProduct>> GetAllWithSizeAsync(int skip, int take);
 
         Task<List<UiProduct>> GetAllAsync();
 
@@ -24,6 +24,6 @@ namespace WEBP.BLL.Abstract
 
         Task<UiProduct> GetByIdAsync(Guid productId);
 
-        Task<IEnumerable<UiProduct>> GetByQueryAsync(string q);
+        Task<List<UiProduct>> GetByQueryAsync(string q);
     }
 }
