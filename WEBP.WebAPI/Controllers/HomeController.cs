@@ -52,14 +52,18 @@ namespace WEBP.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> LogIn(UiLogin login)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(new LogInViewModel());
-            }
-
-            if (await _logInManager.LogIn(login)) return RedirectToAction("Index", "Home");
+            if (!ModelState.IsValid) { return View(new LogInViewModel()); }
             
-            return BadRequest();
+                var user = await _logInManager.LogIn(login);
+            
+            if ( user == "") { return View(new LogInViewModel()); }
+            
+            
+            return View("LoggedIndex", new LoggedViewModel
+            {
+                Products = await _productManager.GetAllWithSizeAsync(1, 12),
+                UserName = user
+            });
         }
         
         [HttpGet]

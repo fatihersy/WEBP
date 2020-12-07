@@ -926,11 +926,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj",
+      "projectUniqueName": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj",
       "projectName": "WEBP.BLL",
-      "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj",
+      "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.BLL\\WEBP.BLL.csproj",
       "packagesPath": "C:\\Users\\supre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.BLL\\obj\\",
+      "outputPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\supre\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -945,15 +945,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
-              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj"
+            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
+              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj"
             },
-            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj": {
-              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj"
+            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj": {
+              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj"
             },
-            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {
-              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj"
+            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {
+              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj"
             }
           }
         }
@@ -966,6 +967,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -981,7 +983,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

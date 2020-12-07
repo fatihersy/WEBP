@@ -10,7 +10,6 @@
     <ProjectReference Include="..\WEBP.Core\WEBP.Core.csproj" />
     <ProjectReference Include="..\WEBP.DAL\WEBP.DAL.csproj" />
     <ProjectReference Include="..\WEBP.Entities\WEBP.Entities.csproj" />
-    <ProjectReference Include="..\WEBP.Web\WEBP.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>

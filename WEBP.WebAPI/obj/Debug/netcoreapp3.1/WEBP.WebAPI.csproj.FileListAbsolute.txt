@@ -2,17 +2,11 @@ C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\W
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.AssemblyInfoInputs.cache
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.AssemblyInfo.cs
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.csproj.CoreCompileInputs.cache
-C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.RazorAssemblyInfo.cache
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.RazorAssemblyInfo.cs
-C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.Web.Views.dll
-C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.Web.Views.pdb
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.Web.exe
-C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.WebAPI.StaticWebAssets.xml
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.WebAPI.exe
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.WebAPI.deps.json
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.WebAPI.runtimeconfig.json
@@ -34,12 +28,10 @@ C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\W
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.Core.dll
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.DAL.dll
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.Entities.dll
-C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.Web.dll
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.BLL.pdb
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.Core.pdb
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.DAL.pdb
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.Entities.pdb
-C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\bin\Debug\netcoreapp3.1\WEBP.Web.pdb
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.TagHelpers.input.cache
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.TagHelpers.output.cache
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.RazorCoreGenerate.cache
@@ -52,7 +44,6 @@ C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\R
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AdminPanelLayout.cshtml.g.cs
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HomeLayout.cshtml.g.cs
-C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LogingLayout.cshtml.g.cs
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.RazorTargetAssemblyInfo.cache
@@ -66,3 +57,7 @@ C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\W
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\WEBP.WebAPI.genruntimeconfig.cache
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
 C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Product\Search.cshtml.g.cs
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoggedLayout.cshtml.g.cs
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Home\LoggedIndex.cshtml.g.cs
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LogInLayout.cshtml.g.cs
+C:\Users\supre\source\repos\fatihersy\WEBP\WEBP.WebAPI\obj\Debug\netcoreapp3.1\scopedcss\bundle\WEBP.WebAPI.styles.css

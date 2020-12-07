@@ -54,11 +54,15 @@ namespace WEBP.BLL.Concrete
             return result;
         }
 
-        public async Task<bool> LogIn(UiLogin login)
+        public async Task<string> LogIn(UiLogin login)
         {
-            var user = await _loginDal.GetAsync(u => u.UserName == login.UserName);
+            if (login == null) return null;
             
-            return user != null && user.VerifyPassword(login.Password);
+                var user = await _loginDal.GetAsync(u => u.UserName == login.UserName);
+
+            if ( user == null || !user.VerifyPassword(login.Password) ) return null;
+
+            return user.UserName;
         }
     }
 }

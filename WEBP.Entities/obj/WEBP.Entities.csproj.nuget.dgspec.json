@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {}
+    "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
+    "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj",
+        "projectUniqueName": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj",
         "projectName": "WEBP.Core",
-        "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj",
+        "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj",
         "packagesPath": "C:\\Users\\supre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\obj\\",
+        "outputPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\supre\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -58,18 +60,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {
+    "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj",
         "projectName": "WEBP.Entities",
-        "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj",
+        "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj",
         "packagesPath": "C:\\Users\\supre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\obj\\",
+        "outputPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\supre\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -84,9 +86,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
-                "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj"
+              "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
+                "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj"
               }
             }
           }
@@ -99,6 +102,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -114,7 +118,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

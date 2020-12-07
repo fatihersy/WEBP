@@ -11,7 +11,7 @@ namespace WEBP.Entities.Database
         public  string   UserName        { get; set; }
         public  Guid     RelatedUniqueNo { get; set; }
         
-        public int      Id               { get; set; }
+        public  int      Id              { get; set; }
 
         public void SetPassword   (string password) => PasswordHash = HashService.CreateHash(password);
         public bool VerifyPassword(string password) => HashService.Verify(password, PasswordHash);

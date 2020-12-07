@@ -906,11 +906,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj",
       "projectName": "WEBP.DAL",
-      "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj",
+      "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.DAL\\WEBP.DAL.csproj",
       "packagesPath": "C:\\Users\\supre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.DAL\\obj\\",
+      "outputPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\supre\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -925,12 +925,13 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
-              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj"
+            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj": {
+              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Core\\WEBP.Core.csproj"
             },
-            "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {
-              "projectPath": "C:\\Users\\supre\\source\\repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj"
+            "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj": {
+              "projectPath": "C:\\Users\\supre\\Source\\Repos\\fatihersy\\WEBP\\WEBP.Entities\\WEBP.Entities.csproj"
             }
           }
         }
@@ -943,6 +944,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
@@ -964,7 +966,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

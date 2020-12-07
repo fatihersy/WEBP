@@ -12,6 +12,6 @@ namespace WEBP.Entities.Database
         public float  Price          { get; set; }
         public Guid   UniqueId       { get; set; }
         public int    UserId         { get; set; }
-        public bool   AktifMi        { get; set; }
+        public bool   IsActive        { get; set; }
     }
 }

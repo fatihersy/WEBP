@@ -112,6 +112,7 @@
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="HomeViewModel.cs" t="Include" />
           <e p="ListPanelViewModel.cs" t="Include" />
+          <e p="LoggedViewModel.cs" t="Include" />
           <e p="LogInViewModel.cs" t="Include" />
           <e p="ProductViewModel.cs" t="Include" />
           <e p="SearchViewModel.cs" t="Include" />
@@ -138,6 +139,7 @@
           </e>
           <e p="Home" t="Include">
             <e p="Index.cshtml" t="Include" />
+            <e p="LoggedIndex.cshtml" t="Include" />
             <e p="Login.cshtml" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
             <e p="SingUp.cshtml" t="Include" />
@@ -149,7 +151,8 @@
           <e p="Shared" t="Include">
             <e p="_AdminPanelLayout.cshtml" t="Include" />
             <e p="_HomeLayout.cshtml" t="Include" />
-            <e p="_LogingLayout.cshtml" t="Include" />
+            <e p="_LoggedLayout.cshtml" t="Include" />
+            <e p="_LogInLayout.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />
           </e>
@@ -158,6 +161,7 @@
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
             <e p="home.css" t="Include" />
+            <e p="loggedMain.css" t="Include" />
             <e p="loging.css" t="Include" />
             <e p="main.css" t="Include" />
             <e p="page.css" t="Include" />

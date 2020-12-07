@@ -1,0 +1,96 @@
+﻿@model WEBP.WebAPI.Models.LoggedViewModel
+
+@{
+	Layout = "~/Views/Shared/_LoggedLayout.cshtml";
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="content-header-div">
+
+	<div id="slider">
+		<div class="slider-navigation" >
+			<div class="sli-nav-btn"> <img class="sli-nav-img active-sli-nav-img" src="Resources/nav-btn-1.jpg" alt=""/> </div>
+			<div class="sli-nav-btn"> <img class="sli-nav-img					" src="Resources/nav-btn-2.jpg" alt=""/> </div>
+			<div class="sli-nav-btn"> <img class="sli-nav-img					" src="Resources/nav-btn-3.jpg" alt=""/> </div>
+		</div>
+		<div class="slides">
+			<div class="slide active-slide"> <img src="Resources/slide-1.jpg" alt=""/> </div>
+			<div class="slide			  "> <img src="Resources/slide-2.jpg" alt=""/> </div>
+			<div class="slide			  "> <img src="Resources/slide-3.jpg" alt=""/> </div>
+		</div>
+	</div>
+	<div class="custom-centered-flex">
+		<div class="categories">
+			<div class="ctg-tmb"> <a href=""> <img class="ctg-tmb-img" src="Resources/b.jpeg" alt=""/> </a> </div> 
+			<div class="ctg-tmb"> <a href=""> <img class="ctg-tmb-img" src="Resources/b.jpeg" alt=""/> </a> </div> 
+			<div class="ctg-tmb"> <a href=""> <img class="ctg-tmb-img" src="Resources/b.jpeg" alt=""/> </a> </div> 
+		</div>
+		
+		@using (Html.BeginForm("Search", "Product", FormMethod.Post, new { enctype = "multipart/form-data", autocomplete = "off", @class="searchForm" }))
+		{
+			<form>
+			@Html.AntiForgeryToken()
+				<div class="input-group">
+					<input name="q" id="q" type="text" class="form-control" placeholder="Bir Kelime Ara." autocomplete="off" autocorrect="off" tabindex="0" spellcheck="false">
+					<div class="input-group-append">
+						<button id="search" class="btn btn-outline-secondary" type="submit"> <i class="fas fa-search"></i> </button>
+					</div>
+				</div>
+			</form>
+		}
+		
+		<div class="categories">
+			<div class="ctg-tmb"> <a href=""> <img class="ctg-tmb-img" src="Resources/b.jpeg" alt=""/> </a> </div> 
+			<div class="ctg-tmb"> <a href=""> <img class="ctg-tmb-img" src="Resources/b.jpeg" alt=""/> </a> </div> 
+			<div class="ctg-tmb"> <a href=""> <img class="ctg-tmb-img" src="Resources/b.jpeg" alt=""/> </a> </div> 
+		</div>
+	</div>
+</div>
+
+<div class="posts">
+
+		@foreach (var item in Model.Products)
+		{
+			<a class="post" href="product?id=@item.UniqueId" title="@item.Title">
+				<div class="post-img" alt="incelemek İçin Tıkla"></div>
+				<div class="post-label">
+					<h6 class="post-title">@item.Title</h6>
+					
+					<div class="post-info">
+						<div class="post-info-left">
+							<span class="post-owner">@item.User</span>
+						</div>
+						<div class="post-info-right">
+							<div class="post-price">
+								@if (item.DiscountedPrice < item.Price)
+								{
+									<span class="product-price">@item.Price TL</span>
+									<span class="product-cost">@item.DiscountedPrice TL</span>
+								}
+								else
+								{
+									<span class="product-cost">@item.Price TL</span>
+								}
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</a>
+		}
+
+		<nav id="pagination-nav"> <ul class="pagination">
+				<li class="pg-link"> <a href="/?page=1">First</a> </li>
+				
+				@for (var i = 1; i <= ViewBag.ipages; i++)
+				{
+					if (i == ViewBag.page)
+						 { <li class="pg-link active-link"> <a href="/?page=@i">@i</a> </li> }
+					else { <li class="pg-link			 "> <a href="/?page=@i">@i</a> </li> }
+				}
+				<li class="pg-link"> <a href="/?page=@ViewBag.ipages">Last</a> </li>
+			</ul> </nav>
+
+		<script type="text/javascript"></script>
+		
+</div>

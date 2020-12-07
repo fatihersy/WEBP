@@ -28,7 +28,6 @@
           "WEBP.Core": "1.0.0",
           "WEBP.DAL": "1.0.0",
           "WEBP.Entities": "1.0.0",
-          "WEBP.Web": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -555,17 +554,6 @@
         },
         "compile": {
           "WEBP.Entities.dll": {}
-        }
-      },
-      "WEBP.Web/1.0.0": {
-        "dependencies": {
-          "WEBP.Entities": "1.0.0"
-        },
-        "runtime": {
-          "WEBP.Web.dll": {}
-        },
-        "compile": {
-          "WEBP.Web.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2459,11 +2447,6 @@
       "sha512": ""
     },
     "WEBP.Entities/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "WEBP.Web/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

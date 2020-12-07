@@ -25,7 +25,7 @@
 				<tr class="blog-table">
 					<td class="blog-title"    >@item.Title</td>
 					<td class="blog-user"     >@Model.Users.Find( a => a.Id == item.UserId ).FirstName</td>
-					<td class="blog-aktifMi"  >@item.AktifMi</td>
+					<td class="blog-aktifMi"  >@item.IsActive</td>
 					<td class="blog-uniqueId" >@item.UniqueId</td>
 				</tr>
 			 }
